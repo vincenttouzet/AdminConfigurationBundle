@@ -1,0 +1,3 @@
+vince_t_admin_configuration_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: VinceTAdminConfigurationBundle:Default:index }

@@ -1,0 +1,20 @@
+{
+    "name": "vincet/admin-configuration-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony VinceTAdminConfigurationBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Touzet",
+            "email": "vincent.touzet@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "vincet/admin-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "VinceT\\AdminConfigurationBundle": "" }
+    },
+    "target-dir": "VinceT/AdminConfigurationBundle"
+}
