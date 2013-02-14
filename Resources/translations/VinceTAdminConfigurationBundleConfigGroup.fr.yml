@@ -1,0 +1,34 @@
+"ConfigGroup": "Groupe de configuration"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_group_list: 'Groupes de configuration'
+    link_config_group_show: 'Fiche groupe de configuration'
+    link_config_group_create: 'Création de groupe de configuration'
+    link_config_group_edit: 'Édition de groupe de configuration'
+    link_config_group_history: 'Historique de groupe de configuration'
+list:
+    label_id: Id
+    label_config_section: Section
+    label_name: Nom
+    label_glabel: Libellé
+    label_position: Position
+    label__action: Actions
+filter:
+    label_id: Id
+    label_config_section: Section
+    label_name: Nom
+    label_glabel: Libellé
+    label_position: Position
+show:
+    label_id: Id
+    label_config_section: Section
+    label_name: Nom
+    label_glabel: Libellé
+    label_position: Position
+form:
+    label_id: Id
+    label_config_section: Section
+    label_name: Nom
+    label_glabel: Libellé
+    label_position: Position
+    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."

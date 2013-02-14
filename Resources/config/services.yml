@@ -1,7 +1,79 @@
 parameters:
-#    vince_t_admin_configuration.example.class: VinceT\AdminConfigurationBundle\Example
-
+    admin.configuration.manager.class: VinceT\AdminConfigurationBundle\Manager\AdminConfigurationManager
+    admin.configuration.configtype_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigTypeManager
+    admin.configuration.configvalue_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigValueManager
+    admin.configuration.configgroup_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigGroupManager
+    admin.configuration.configsection_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigSectionManager
 services:
-#    vince_t_admin_configuration.example:
-#        class: %vince_t_admin_configuration.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    admin.configuration.manager:
+        class: '%admin.configuration.manager.class%'
+        arguments:
+            - '@service_container'
+
+    admin.configuration.configsection_manager:
+        class: '%admin.configuration.configsection_manager.class%'
+        arguments:
+            - '@service_container'
+    admin.configuration.admin.configsection:
+        class: VinceT\AdminConfigurationBundle\Admin\ConfigSectionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: AdminConfiguration, label: ConfigSection, label_translator_strategy: sonata.admin.label.strategy.underscore }
+        arguments:
+            - null
+            - VinceT\AdminConfigurationBundle\Entity\ConfigSection
+            - 'VinceTAdminConfigurationBundle:Admin/ConfigSectionAdmin'
+        calls:
+            - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigSection]]
+            - [setModelManager, ['@admin.configuration.configsection_manager']]
+            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+
+    admin.configuration.configgroup_manager:
+        class: '%admin.configuration.configgroup_manager.class%'
+        arguments:
+            - '@service_container'
+    admin.configuration.admin.configgroup:
+        class: VinceT\AdminConfigurationBundle\Admin\ConfigGroupAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: AdminConfiguration, label: ConfigGroup, label_translator_strategy: sonata.admin.label.strategy.underscore }
+        arguments:
+            - null
+            - VinceT\AdminConfigurationBundle\Entity\ConfigGroup
+            - 'VinceTAdminConfigurationBundle:Admin/ConfigGroupAdmin'
+        calls:
+            - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigGroup]]
+            - [setModelManager, ['@admin.configuration.configgroup_manager']]
+            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+
+    admin.configuration.configvalue_manager:
+        class: '%admin.configuration.configvalue_manager.class%'
+        arguments:
+            - '@service_container'
+    admin.configuration.admin.configvalue:
+        class: VinceT\AdminConfigurationBundle\Admin\ConfigValueAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: AdminConfiguration, label: ConfigValue, label_translator_strategy: sonata.admin.label.strategy.underscore }
+        arguments:
+            - null
+            - VinceT\AdminConfigurationBundle\Entity\ConfigValue
+            - 'VinceTAdminConfigurationBundle:Admin/ConfigValueAdmin'
+        calls:
+            - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigValue]]
+            - [setModelManager, ['@admin.configuration.configvalue_manager']]
+            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+
+    admin.configuration.configtype_manager:
+        class: '%admin.configuration.configtype_manager.class%'
+        arguments:
+            - '@service_container'
+    admin.configuration.admin.configtype:
+        class: VinceT\AdminConfigurationBundle\Admin\ConfigTypeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: AdminConfiguration, label: ConfigType, label_translator_strategy: sonata.admin.label.strategy.underscore }
+        arguments:
+            - null
+            - VinceT\AdminConfigurationBundle\Entity\ConfigType
+            - 'VinceTAdminConfigurationBundle:Admin/ConfigTypeAdmin'
+        calls:
+            - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigType]]
+            - [setModelManager, ['@admin.configuration.configtype_manager']]
+            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]

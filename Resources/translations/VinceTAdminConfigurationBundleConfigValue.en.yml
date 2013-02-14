@@ -1,0 +1,43 @@
+"ConfigValue": "Configuration value"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_value_list: 'Configuration value List'
+    link_config_value_show: 'Show configuration value'
+    link_config_value_create: 'Create configuration value'
+    link_config_value_edit: 'Edit configuration value'
+    link_config_value_history: 'Configuration value History'
+list:
+    label_id: Id
+    label_config_group: Group
+    label_config_type: Type
+    label_name: Name
+    label_vlabel: Label
+    label_value: Value
+    label_position: Position
+    label__action: Actions
+filter:
+    label_id: Id
+    label_config_group: Group
+    label_config_type: Type
+    label_name: Name
+    label_vlabel: Label
+    label_value: Value
+    label_position: Position
+show:
+    label_id: Id
+    label_config_group: Group
+    label_config_type: Type
+    label_name: Name
+    label_vlabel: Label
+    label_value: Value
+    label_position: Position
+form:
+    label_id: Id
+    label_config_group: Group
+    label_config_type: Type
+    label_name: Name
+    label_vlabel: Label
+    label_value: Value
+    label_help: Help
+    label_position: Position
+    help_name: "A name must only contains lowercase (a-z) and underscores (_)."

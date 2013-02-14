@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": ">=5.3.2",
+        "vincet/base-bundle": "dev-master",
         "vincet/admin-bundle": "dev-master"
     },
     "autoload": {

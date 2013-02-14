@@ -9,12 +9,12 @@
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
 
-namespace VinceT\AdminConfigurationBundle;
+namespace VinceT\AdminConfigurationBundle\Manager;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use VinceT\BaseBundle\Manager\BaseManager;
 
 /**
- * VinceTAdminConfigurationBundle
+ * ConfigTypeManager
  *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
@@ -22,6 +22,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class VinceTAdminConfigurationBundle extends Bundle
+class ConfigTypeManager extends BaseManager
 {
 }

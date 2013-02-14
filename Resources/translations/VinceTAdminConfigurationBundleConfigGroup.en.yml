@@ -1,0 +1,34 @@
+"ConfigGroup": "Configuration group"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_group_list: 'Configuration group List'
+    link_config_group_show: 'Show configuration group'
+    link_config_group_create: 'Create configuration group'
+    link_config_group_edit: 'Edit configuration group'
+    link_config_group_history: 'Configuration group History'
+list:
+    label_id: Id
+    label_config_section: Section
+    label_name: Name
+    label_glabel: Label
+    label_position: Position
+    label__action: Actions
+filter:
+    label_id: Id
+    label_config_section: Section
+    label_name: Name
+    label_glabel: Label
+    label_position: Position
+show:
+    label_id: Id
+    label_config_section: Section
+    label_name: Name
+    label_glabel: Label
+    label_position: Position
+form:
+    label_id: Id
+    label_config_section: Section
+    label_name: Name
+    label_glabel: Label
+    label_position: Position
+    help_name: "A name must only contains lowercase (a-z) and underscores (_)."

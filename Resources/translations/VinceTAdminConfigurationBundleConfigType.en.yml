@@ -1,0 +1,25 @@
+"ConfigType": "Configuration type"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_type_list: 'Configuration type List'
+    link_config_type_show: 'Show configuration type'
+    link_config_type_create: 'Create configuration type'
+    link_config_type_edit: 'Edit configuration type'
+    link_config_type_history: 'Configuration type History'
+list:
+    label_id: Id
+    label_tlabel: Label
+    label_form_type: 'Form type'
+    label__action: Actions
+filter:
+    label_id: Id
+    label_tlabel: Label
+    label_form_type: 'Form type'
+show:
+    label_id: Id
+    label_tlabel: Label
+    label_form_type: 'Form type'
+form:
+    label_id: Id
+    label_tlabel: Label
+    label_form_type: 'Form type'

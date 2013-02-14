@@ -1,0 +1,30 @@
+"ConfigSection": "Section de configuration"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_section_list: "Sections de configuration"
+    link_config_section_show: "Fiche d'une section de configuration"
+    link_config_section_create: "Création d'une section de configuration"
+    link_config_section_edit: "Édition d'une section de configuration"
+    link_config_section_history: "Historique d'une section de configuration"
+list:
+    label_id: Id
+    label_name: Nom
+    label_slabel: Libellé
+    label_position: Position
+    label__action: Actions
+filter:
+    label_id: Id
+    label_name: Nom
+    label_slabel: Libellé
+    label_position: Position
+show:
+    label_id: Id
+    label_name: Nom
+    label_slabel: Libellé
+    label_position: Position
+form:
+    label_id: Id
+    label_name: Nom
+    label_slabel: Libellé
+    label_position: Position
+    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."

@@ -1,0 +1,55 @@
+{% extends base_template %}
+
+{% block title %}
+    {{ 'admin.configuration.title'|trans({}, 'VinceTAdminConfigurationBundle') }}
+{% endblock %}
+
+{% block side_menu %}
+    <ul class="nav nav-list">
+        {{ knp_menu_render(configuration_menu, {'currentClass' : 'active'}, 'admin_menu_renderer') }}
+    </ul>
+{% endblock %}
+
+{% block actions %}
+    <div class="sonata-actions">
+        <a class="btn sonata-action-element" href="{{ admin_section.generateUrl('list') }}">
+            <i class="icon-wrench"></i>
+            {{ "Manage Sections"|trans({}, 'VinceTAdminConfigurationBundle') }}
+        </a>
+        <a class="btn sonata-action-element" href="{{ admin_group.generateUrl('list') }}">
+            <i class="icon-wrench"></i>
+            {{ "Manage Groups"|trans({}, 'VinceTAdminConfigurationBundle') }}
+        </a>
+        <a class="btn sonata-action-element" href="{{ admin_value.generateUrl('list') }}">
+            <i class="icon-wrench"></i>
+            {{ "Manage Values"|trans({}, 'VinceTAdminConfigurationBundle') }}
+        </a>
+        <a class="btn sonata-action-element" href="{{ admin_type.generateUrl('list') }}">
+            <i class="icon-wrench"></i>
+            {{ "Manage Types"|trans({}, 'VinceTAdminConfigurationBundle') }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block sonata_admin_content %}
+    {% if group %}
+        <h2>{{ group.configsection.slabel }} > {{ group.glabel }}</h2>
+        <form class="form-horizontal clearfix" id="form_contrat" action="{{ path('vince_t_admin_configuration_save', {'id': group.id}) }}" method="post" {{ form_enctype(form) }}>
+            <div class="pull-right">
+                <input type="submit" class="btn btn-primary" name="btn_update_and_edit" value="{{ 'Save configuration'|trans({}, 'VinceTAdminConfigurationBundle') }}">
+            </div>
+            {% for input in form %}
+                {% if input.name != '_token' %}
+                    <div class="control-group" id="sonata-ba-field-container-s511d4a7ba50e4_name">
+                        {{ form_label(input) }}
+                        <div class="controls">
+                            {{ form_widget(input) }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {{ form_widget(form) }}
+        </form>
+    {% else %}
+    {% endif %}
+{% endblock %}

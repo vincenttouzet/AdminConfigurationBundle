@@ -1,0 +1,43 @@
+"ConfigValue": "Valeur de configuration"
+"AdminConfiguration": "Configuration"
+breadcrumb:
+    link_config_value_list: "Valeurs de configuration"
+    link_config_value_show: "Fiche d'une valeur de configuration"
+    link_config_value_create: "Création d'une valeur de configuration"
+    link_config_value_edit: "Édition d'une valeur de configuration"
+    link_config_value_history: "Historique d'une valeur de configuration"
+list:
+    label_id: Id
+    label_config_group: Groupe
+    label_config_type: Type
+    label_name: Nom
+    label_vlabel: Libellé
+    label_value: Valeur
+    label_position: Position
+    label__action: Actions
+filter:
+    label_id: Id
+    label_config_group: Groupe
+    label_config_type: Type
+    label_name: Nom
+    label_vlabel: Libellé
+    label_value: Valeur
+    label_position: Position
+show:
+    label_id: Id
+    label_config_group: Groupe
+    label_config_type: Type
+    label_name: Nom
+    label_vlabel: Libellé
+    label_value: Valeur
+    label_position: Position
+form:
+    label_id: Id
+    label_config_group: Groupe
+    label_config_type: Type
+    label_name: Nom
+    label_vlabel: Libellé
+    label_value: Valeur
+    label_help: Aide
+    label_position: Position
+    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."

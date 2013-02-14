@@ -1,0 +1,8 @@
+"A name must only contains lowercase (a-z) and underscores (_).": "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."
+'A group "%group%" already exist in section "%section%".': 'Un groupe "%group%" existe déjà dans la section "%section%".'
+'The section "%section%" already exist.': 'La section "%section%" existe déjà.'
+'A value "%value%" already exist in group "%group%" under section "%section%".': 'Une valeur "%value%" existe déjà dans le groupe "%group%" sous la section "%section%".'
+"AdminConfiguration": "Configuration"
+admin:
+    configuration:
+        title: 'Configuration'
