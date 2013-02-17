@@ -42,6 +42,9 @@
                             {{ form_label(input) }}
                             <div class="controls">
                                 {{ form_widget(input) }}
+                                {% if sub.vars.value.help %}
+                                    <span class="help-block sonata-ba-field-help">{{ sub.vars.value.help }}</span>
+                                {% endif %}
                             </div>
                         </div>
                     {% endif %}

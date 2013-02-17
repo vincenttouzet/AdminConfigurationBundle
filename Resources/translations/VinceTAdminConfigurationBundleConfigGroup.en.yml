@@ -1,4 +1,4 @@
-"ConfigGroup": "Manage group"
+"ConfigGroup": "Manage groups"
 breadcrumb:
     link_config_group_list: 'Configuration group List'
     link_config_group_show: 'Show configuration group'

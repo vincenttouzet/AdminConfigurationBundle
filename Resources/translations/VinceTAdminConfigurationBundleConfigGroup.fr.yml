@@ -1,4 +1,4 @@
-ConfigGroup: 'Groupe de configuration'
+ConfigGroup: 'Gérer les groupes'
 breadcrumb:
     link_config_group_list: 'Groupes de configuration'
     link_config_group_show: 'Fiche groupe de configuration'
