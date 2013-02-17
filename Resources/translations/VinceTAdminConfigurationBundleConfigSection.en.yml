@@ -5,6 +5,7 @@ breadcrumb:
     link_config_section_show: 'Show configuration section'
     link_config_section_create: 'Create configuration section'
     link_config_section_edit: 'Edit configuration section'
+    link_config_section_delete: 'Delete configuration section'
     link_config_section_history: 'Configuration section History'
 list:
     label_id: Id

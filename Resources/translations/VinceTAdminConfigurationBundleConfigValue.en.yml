@@ -5,6 +5,7 @@ breadcrumb:
     link_config_value_show: 'Show configuration value'
     link_config_value_create: 'Create configuration value'
     link_config_value_edit: 'Edit configuration value'
+    link_config_value_delete: 'Delete configuration value'
     link_config_value_history: 'Configuration value History'
 list:
     label_id: Id
@@ -13,6 +14,7 @@ list:
     label_name: Name
     label_vlabel: Label
     label_value: Value
+    label_help: Help
     label_position: Position
     label__action: Actions
 filter:
@@ -22,6 +24,7 @@ filter:
     label_name: Name
     label_vlabel: Label
     label_value: Value
+    label_help: Help
     label_position: Position
 show:
     label_id: Id
@@ -30,6 +33,7 @@ show:
     label_name: Name
     label_vlabel: Label
     label_value: Value
+    label_help: Help
     label_position: Position
 form:
     label_id: Id

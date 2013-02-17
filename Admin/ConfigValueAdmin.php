@@ -83,6 +83,7 @@ class ConfigValueAdmin extends BaseAdmin
             ->add('name')
             ->add('vlabel')
             ->add('value')
+            ->add('help')
             ->add('position')
             ->add(
                 '_action', 

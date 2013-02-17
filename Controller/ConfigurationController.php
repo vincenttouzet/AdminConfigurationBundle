@@ -38,7 +38,7 @@ class ConfigurationController extends BaseController
         $sections = $configSectionManager->getRepository()->findAllWithConfigGroups();
         $group = null;
         if ( count($sections) ) {
-            $groups = $sections[0]->getConfigGroups();
+            $groups = $this->container->get('admin.configuration.configgroup_manager')->getRepository()->findByConfigGroupId($sections[0]->getId());
             if ( count($groups) ) {
                 $group = $groups[0];
             }
@@ -69,16 +69,17 @@ class ConfigurationController extends BaseController
     {
         $form = $this->createConfigGroupForm($group);
         $form->bind($this->getRequest());
-        $configurationManager = $this->container->get('admin.configuration.manager');
-        foreach ($form as $input) {
-            $configurationManager->set($input->getName(), $input->getData());
+        $configValueManager = $this->container->get('admin.configuration.configvalue_manager');
+        foreach ($form as $sub) {
+            $configValue = $sub->getData();
+            $configValueManager->update($configValue);
         }
         $message = $this->container->get('translator')->trans(
             'The configuration has been successfully saved.', 
             array(), 
             'VinceTAdminConfigurationBundle'
         );
-        $this->get('session')->setFlash('sonata_flash_success', $message);
+        $this->get('session')->getFlashBag()->add('sonata_flash_success', $message);
         return $this->redirect(
             $this->generateUrl(
                 'vince_t_admin_configuration_group', 
@@ -127,19 +128,15 @@ class ConfigurationController extends BaseController
         $formBuilder = $this->createFormBuilder();
         $values = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findByConfigGroupId($group->getId());
         foreach ($values as $configValue) {
-            $formBuilder->add(
+            $sub = $this->container->get('form.factory')->createNamedBuilder(
                 $configValue->getPath(),
-                $configValue->getConfigType()->getFormType(),
+                'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
+                $configValue,
                 array(
-                    'label' => $configValue->getVLabel(),
-                    'data' => $configValue->getValue(),
-                    'label_attr' => array(
-                        'class' => 'control-label'
-                    ),
-                    'sonata_field_description' => $configValue->getHelp(),
-                    'required' => false
+                    'help' => $configValue->getHelp()
                 )
             );
+            $formBuilder->add($sub);
         }
         return $formBuilder->getForm();
     }

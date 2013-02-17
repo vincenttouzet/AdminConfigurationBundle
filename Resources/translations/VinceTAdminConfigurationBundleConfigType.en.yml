@@ -5,6 +5,7 @@ breadcrumb:
     link_config_type_show: 'Show configuration type'
     link_config_type_create: 'Create configuration type'
     link_config_type_edit: 'Edit configuration type'
+    link_config_type_delete: 'Delete configuration type'
     link_config_type_history: 'Configuration type History'
 list:
     label_id: Id

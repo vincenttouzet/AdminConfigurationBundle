@@ -35,20 +35,22 @@
     {% if group %}
         <h2>{{ group.configsection.slabel }} > {{ group.glabel }}</h2>
         <form class="form-horizontal clearfix" id="form_contrat" action="{{ path('vince_t_admin_configuration_save', {'id': group.id}) }}" method="post" {{ form_enctype(form) }}>
-            <div class="pull-right">
-                <input type="submit" class="btn btn-primary" name="btn_update_and_edit" value="{{ 'Save configuration'|trans({}, 'VinceTAdminConfigurationBundle') }}">
-            </div>
-            {% for input in form %}
-                {% if input.name != '_token' %}
-                    <div class="control-group" id="sonata-ba-field-container-s511d4a7ba50e4_name">
-                        {{ form_label(input) }}
-                        <div class="controls">
-                            {{ form_widget(input) }}
+            {% for sub in form %}
+                {% for input in sub %}
+                    {% if input.vars.name != '_token' %}
+                        <div class="control-group">
+                            {{ form_label(input) }}
+                            <div class="controls">
+                                {{ form_widget(input) }}
+                            </div>
                         </div>
-                    </div>
-                {% endif %}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
             {{ form_widget(form) }}
+            <div class="well form-actions">
+                <input type="submit" class="btn btn-primary" name="btn_update_and_edit" value="{{ 'Save configuration'|trans({}, 'VinceTAdminConfigurationBundle') }}">
+            </div>
         </form>
     {% else %}
     {% endif %}

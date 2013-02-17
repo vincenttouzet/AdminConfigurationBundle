@@ -5,6 +5,7 @@ breadcrumb:
     link_config_section_show: "Fiche d'une section de configuration"
     link_config_section_create: "Création d'une section de configuration"
     link_config_section_edit: "Édition d'une section de configuration"
+    link_config_section_delete: "Suppression d'une section de configuration"
     link_config_section_history: "Historique d'une section de configuration"
 list:
     label_id: Id

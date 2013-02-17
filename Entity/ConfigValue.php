@@ -69,7 +69,7 @@ class ConfigValue
      *
      * @ORM\Column(name="value", type="string", length=255, nullable=true)
      */
-    private $value;
+    private $value = null;
 
     /**
      * @var string

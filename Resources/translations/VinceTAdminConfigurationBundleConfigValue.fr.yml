@@ -5,6 +5,7 @@ breadcrumb:
     link_config_value_show: "Fiche d'une valeur de configuration"
     link_config_value_create: "Création d'une valeur de configuration"
     link_config_value_edit: "Édition d'une valeur de configuration"
+    link_config_value_delete: "Suppression d'une valeur de configuration"
     link_config_value_history: "Historique d'une valeur de configuration"
 list:
     label_id: Id
@@ -13,6 +14,7 @@ list:
     label_name: Nom
     label_vlabel: Libellé
     label_value: Valeur
+    label_help: Aide
     label_position: Position
     label__action: Actions
 filter:
@@ -22,6 +24,7 @@ filter:
     label_name: Nom
     label_vlabel: Libellé
     label_value: Valeur
+    label_help: Aide
     label_position: Position
 show:
     label_id: Id
@@ -30,6 +33,7 @@ show:
     label_name: Nom
     label_vlabel: Libellé
     label_value: Valeur
+    label_help: Aide
     label_position: Position
 form:
     label_id: Id

@@ -9,7 +9,7 @@ services:
         class: '%admin.configuration.manager.class%'
         arguments:
             - '@service_container'
-
+            
     admin.configuration.configsection_manager:
         class: '%admin.configuration.configsection_manager.class%'
         arguments:
@@ -25,7 +25,7 @@ services:
         calls:
             - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigSection]]
             - [setModelManager, ['@admin.configuration.configsection_manager']]
-            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+            - [setTemplate, [list, 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
 
     admin.configuration.configgroup_manager:
         class: '%admin.configuration.configgroup_manager.class%'
@@ -42,7 +42,7 @@ services:
         calls:
             - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigGroup]]
             - [setModelManager, ['@admin.configuration.configgroup_manager']]
-            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+            - [setTemplate, [list, 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
 
     admin.configuration.configvalue_manager:
         class: '%admin.configuration.configvalue_manager.class%'
@@ -59,7 +59,7 @@ services:
         calls:
             - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigValue]]
             - [setModelManager, ['@admin.configuration.configvalue_manager']]
-            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+            - [setTemplate, [list, 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
 
     admin.configuration.configtype_manager:
         class: '%admin.configuration.configtype_manager.class%'
@@ -76,4 +76,4 @@ services:
         calls:
             - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigType]]
             - [setModelManager, ['@admin.configuration.configtype_manager']]
-            - [setTemplate, ['list', 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+            - [setTemplate, [list, 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]

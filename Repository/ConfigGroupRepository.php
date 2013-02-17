@@ -38,6 +38,7 @@ class ConfigGroupRepository extends EntityRepository
     public function findOneBySectionAndGroupName($sectionName, $groupName)
     {
         $query = $this->createQueryBuilder('g')
+            ->select('g', 's')
             ->innerJoin('g.configSection', 's')
             ->where('s.name = :sname')
             ->andWhere('g.name = :gname')

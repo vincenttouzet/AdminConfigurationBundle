@@ -5,6 +5,7 @@ breadcrumb:
     link_config_group_show: 'Show configuration group'
     link_config_group_create: 'Create configuration group'
     link_config_group_edit: 'Edit configuration group'
+    link_config_group_delete: 'Delete configuration group'
     link_config_group_history: 'Configuration group History'
 list:
     label_id: Id

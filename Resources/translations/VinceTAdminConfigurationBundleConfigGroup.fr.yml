@@ -1,11 +1,17 @@
-"ConfigGroup": "Groupe de configuration"
-"AdminConfiguration": "Configuration"
+ConfigGroup: 'Groupe de configuration'
+AdminConfiguration: Configuration
 breadcrumb:
     link_config_group_list: 'Groupes de configuration'
     link_config_group_show: 'Fiche groupe de configuration'
     link_config_group_create: 'Création de groupe de configuration'
     link_config_group_edit: 'Édition de groupe de configuration'
+    link_config_group_delete: 'Suppression du group de configuration'
     link_config_group_history: 'Historique de groupe de configuration'
+    link_configgroup_list: ConfigGroups
+    link_configgroup_show: 'Fiche ConfigGroup'
+    link_configgroup_create: 'Création de ConfigGroup'
+    link_configgroup_edit: 'Édition de ConfigGroup'
+    link_configgroup_history: 'Historique de ConfigGroup'
 list:
     label_id: Id
     label_config_section: Section
@@ -31,4 +37,4 @@ form:
     label_name: Nom
     label_glabel: Libellé
     label_position: Position
-    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."
+    help_name: 'Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_).'

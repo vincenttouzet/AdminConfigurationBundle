@@ -1,0 +1,67 @@
+parameters:
+    admin.configuration.form.type.configvalue.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueType
+    admin.configuration.form.type.configvalue.text.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTextType
+    admin.configuration.form.type.configvalue.textarea.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTextareaType
+    admin.configuration.form.type.configvalue.email.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueEmailType
+    admin.configuration.form.type.configvalue.checkbox.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueCheckboxType
+    admin.configuration.form.type.configvalue.integer.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueIntegerType
+    admin.configuration.form.type.configvalue.number.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueNumberType
+    admin.configuration.form.type.configvalue.money.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueMoneyType
+    admin.configuration.form.type.configvalue.percent.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValuePercentType
+    admin.configuration.form.type.configvalue.url.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueUrlType
+    admin.configuration.form.type.configvalue.datetime.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueDateTimeType
+    admin.configuration.form.type.configvalue.date.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueDateType
+    admin.configuration.form.type.configvalue.time.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTimeType
+services:
+    admin.configuration.form.type.configvalue:
+        class: %admin.configuration.form.type.configvalue.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue }
+    admin.configuration.form.type.configvalue.text:
+        class: %admin.configuration.form.type.configvalue.text.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_text }
+    admin.configuration.form.type.configvalue.textarea:
+        class: %admin.configuration.form.type.configvalue.textarea.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_textarea }
+    admin.configuration.form.type.configvalue.email:
+        class: %admin.configuration.form.type.configvalue.email.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_email }
+    admin.configuration.form.type.configvalue.checkbox:
+        class: %admin.configuration.form.type.configvalue.checkbox.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_checkbox }
+    admin.configuration.form.type.configvalue.integer:
+        class: %admin.configuration.form.type.configvalue.integer.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_integer }
+    admin.configuration.form.type.configvalue.number:
+        class: %admin.configuration.form.type.configvalue.number.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_number }
+    admin.configuration.form.type.configvalue.money:
+        class: %admin.configuration.form.type.configvalue.money.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_money }
+    admin.configuration.form.type.configvalue.percent:
+        class: %admin.configuration.form.type.configvalue.percent.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_percent }
+    admin.configuration.form.type.configvalue.url:
+        class: %admin.configuration.form.type.configvalue.url.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_url }
+    admin.configuration.form.type.configvalue.datetime:
+        class: %admin.configuration.form.type.configvalue.datetime.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_datetime }
+    admin.configuration.form.type.configvalue.date:
+        class: %admin.configuration.form.type.configvalue.date.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_date }
+    admin.configuration.form.type.configvalue.time:
+        class: %admin.configuration.form.type.configvalue.time.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_time }
