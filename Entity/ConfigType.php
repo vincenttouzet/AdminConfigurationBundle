@@ -51,6 +51,13 @@ class ConfigType
     private $formType;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="options", type="text", nullable=true)
+     */
+    private $options;
+
+    /**
      * @ORM\OneToMany(targetEntity="VinceT\AdminConfigurationBundle\Entity\ConfigValue", mappedBy="configType")
      */
     protected $configValues;
@@ -112,6 +119,30 @@ class ConfigType
     {
         return $this->formType;
     }
+
+    /**
+     * Gets Options
+     * 
+     * @return [type]
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+    
+    /**
+     * Sets Options
+     * 
+     * @param [type] $options Options
+     * 
+     * @return [type]
+     */
+    public function setOptions($options)
+    {
+        $this->options = $options;
+        return $this;
+    }
+    
 
     /**
      * Add configValues

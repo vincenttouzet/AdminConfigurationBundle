@@ -42,5 +42,6 @@ form:
     label_vlabel: Label
     label_value: Value
     label_help: Help
+    label_options: 'Form type options'
     label_position: Position
     help_name: "A name must only contains lowercase (a-z) and underscores (_)."

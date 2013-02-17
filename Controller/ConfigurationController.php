@@ -131,10 +131,7 @@ class ConfigurationController extends BaseController
             $sub = $this->container->get('form.factory')->createNamedBuilder(
                 $configValue->getPath(),
                 'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
-                $configValue,
-                array(
-                    'help' => $configValue->getHelp()
-                )
+                $configValue
             );
             $formBuilder->add($sub);
         }

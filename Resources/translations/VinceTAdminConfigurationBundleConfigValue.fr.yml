@@ -42,5 +42,6 @@ form:
     label_vlabel: Libellé
     label_value: Valeur
     label_help: Aide
+    label_options: 'Options du formulaire'
     label_position: Position
     help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."

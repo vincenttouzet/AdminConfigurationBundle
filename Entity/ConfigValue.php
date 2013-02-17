@@ -79,6 +79,13 @@ class ConfigValue
     private $help;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="options", type="text", nullable=true)
+     */
+    private $options;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="position", type="integer")
@@ -243,6 +250,29 @@ class ConfigValue
     public function setHelp($help)
     {
         $this->help = $help;
+        return $this;
+    }
+
+    /**
+     * Gets Options
+     * 
+     * @return [type]
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+    
+    /**
+     * Sets Options
+     * 
+     * @param [type] $options Options
+     * 
+     * @return [type]
+     */
+    public function setOptions($options)
+    {
+        $this->options = $options;
         return $this;
     }
     

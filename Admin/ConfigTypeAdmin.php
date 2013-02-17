@@ -39,7 +39,8 @@ class ConfigTypeAdmin extends BaseAdmin
     {
         $formMapper
             ->add('tlabel')
-            ->add('formType');
+            ->add('formType')
+            ->add('options');
     }
 
     /**

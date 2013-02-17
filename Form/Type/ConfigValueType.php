@@ -37,18 +37,34 @@ class ConfigValueType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $configValue = $options['data'];
+        $formOptions = array();
+        if ( $configValue->getConfigType()->getOptions()
+            && $typeOptions = json_decode($configValue->getConfigType()->getOptions())
+        ) {
+            $typeOptions = get_object_vars($typeOptions);
+            $formOptions = array_merge($formOptions, $typeOptions);
+        }
+        if ( $configValue->getOptions()
+            && $valueOptions = json_decode($configValue->getOptions())
+        ) {
+            $valueOptions = get_object_vars($valueOptions);
+            $formOptions = array_merge($formOptions, $valueOptions);
+        }
+        $defaultFormOptions = array(
+            'label' => $configValue->getVLabel(),
+            'label_attr' => array(
+                'class' => 'control-label'
+            ),
+            'required' => false,
+        );
+        $formOptions = array_merge($formOptions, $defaultFormOptions);
         $builder
             ->add(
                 'value',
                 $configValue->getConfigType()->getFormType(),
-                array(
-                    'label' => $configValue->getVLabel(),
-                    'label_attr' => array(
-                        'class' => 'control-label'
-                    ),
-                    'required' => false,
-                )
+                $formOptions
             );
     }
 

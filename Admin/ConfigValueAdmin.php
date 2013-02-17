@@ -44,6 +44,7 @@ class ConfigValueAdmin extends BaseAdmin
             ->add('vlabel')
             ->add('value')
             ->add('help')
+            ->add('options')
             ->add('position')
             ->setHelps(array('name'=>'form.help_name'));
     }

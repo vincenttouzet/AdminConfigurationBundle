@@ -23,3 +23,4 @@ form:
     label_id: Id
     label_tlabel: Libellé
     label_form_type: "Form type"
+    label_options: 'Options du formulaire'
