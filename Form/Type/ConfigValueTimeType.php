@@ -33,7 +33,7 @@ class ConfigValueTimeType extends AbstractType
      */
     public function getParent()
     {
-        return 'admin_configuration_configvalue';
+        return 'admin_configuration_configvalue_datetime';
     }
 
     /**
