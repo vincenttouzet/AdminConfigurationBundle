@@ -1,15 +1,28 @@
 parameters:
+    admin.configuration.twig.extension.class: VinceT\AdminConfigurationBundle\Twig\Extension\AdminConfigurationExtension
     admin.configuration.manager.class: VinceT\AdminConfigurationBundle\Manager\AdminConfigurationManager
     admin.configuration.configtype_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigTypeManager
     admin.configuration.configvalue_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigValueManager
     admin.configuration.configgroup_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigGroupManager
     admin.configuration.configsection_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigSectionManager
 services:
+    admin.configuration.twig.extension:
+        class: %admin.configuration.twig.extension.class%
+        arguments:
+            - @service_container
+        tags:
+            - { name: twig.extension }
+
+    kernel.listener.admin_configuration_menu_listener:
+        class: VinceT\AdminConfigurationBundle\EventListener\AdminMenuListener
+        tags:
+            - { name: kernel.event_listener, event: admin.menu.create, method: createMenu }
+
     admin.configuration.manager:
         class: '%admin.configuration.manager.class%'
         arguments:
             - '@service_container'
-            
+
     admin.configuration.configsection_manager:
         class: '%admin.configuration.configsection_manager.class%'
         arguments:

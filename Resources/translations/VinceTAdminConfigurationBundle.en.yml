@@ -2,7 +2,11 @@
 'A group "%group%" already exist in section "%section%".': 'A group "%group%" already exist in section "%section%".'
 'The section "%section%" already exist.': 'The section "%section%" already exist.'
 'A value "%value%" already exist in group "%group%" under section "%section%".': 'A value "%value%" already exist in group "%group%" under section "%section%".'
-"AdminConfiguration": "Configuration"
+"Configuration": "Configuration"
+"Manage Sections": "Manage sections"
+"Manage Groups": "Manage groups"
+"Manage Values": "Manage values"
+"Manage Types": "Manage types"
 admin:
     configuration:
         title: 'Configuration'

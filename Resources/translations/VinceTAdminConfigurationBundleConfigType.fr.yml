@@ -1,5 +1,4 @@
 "ConfigType": "Type de configuration"
-"AdminConfiguration": "Configuration"
 breadcrumb:
     link_config_type_list: "Types de configurations"
     link_config_type_show: "Fiche d'un type de configuration"

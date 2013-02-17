@@ -1,5 +1,4 @@
 "ConfigValue": "Configuration value"
-"AdminConfiguration": "Configuration"
 breadcrumb:
     link_config_value_list: 'Configuration value List'
     link_config_value_show: 'Show configuration value'

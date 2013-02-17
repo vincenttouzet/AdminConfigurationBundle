@@ -1,5 +1,4 @@
 "ConfigSection": "Configuration section"
-"AdminConfiguration": "Configuration"
 breadcrumb:
     link_config_section_list: 'Configuration section List'
     link_config_section_show: 'Show configuration section'

@@ -1,5 +1,4 @@
 ConfigGroup: 'Groupe de configuration'
-AdminConfiguration: Configuration
 breadcrumb:
     link_config_group_list: 'Groupes de configuration'
     link_config_group_show: 'Fiche groupe de configuration'
