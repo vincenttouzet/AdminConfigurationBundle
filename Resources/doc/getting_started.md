@@ -25,5 +25,21 @@ To retrieve a value from a twig template:
 {{ admin_configuration_get('section_name:group_name:value_name') }}
 ```
 
+Advanced usage
+--------------
+
+It's possible to set the form options on 2 levels :
+* On the Type
+* On the Value
+
+The options must be a valid json object representing the options array.
+
+For example, if you want to set the years used in a DateTime form type you must set the options like this:
+```
+{
+"years":[2012, 2013]
+}
+```
+
 
 [1]: https://github.com/vincenttouzet/AdminConfigurationBundle/blob/master/Resources/doc/create_type.md
