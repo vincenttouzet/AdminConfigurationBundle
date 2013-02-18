@@ -80,7 +80,7 @@ class ConfigValueType extends AbstractType implements ContainerAwareInterface
             $formOptions = array_merge($formOptions, $valueOptions);
         }
         $defaultFormOptions = array(
-            'label' => $configValue->getVLabel(),
+            'label' => $this->container->get('translator')->trans($configValue->getVLabel(), array(), 'VinceTAdminConfigurationBundle'),
             'label_attr' => array(
                 'class' => 'control-label'
             ),

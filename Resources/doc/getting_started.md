@@ -25,6 +25,17 @@ To retrieve a value from a twig template:
 {{ admin_configuration_get('section_name:group_name:value_name') }}
 ```
 
+Translation
+-----------
+
+You can translate the form labels and helps into the VinceTAdminConfigurationBundle catalog.
+
+e.g in src/Acme/DemoBundle/Resources/translations/VinceTAdminConfigurationBundle.fr.yml:
+```yml
+"My Label": "My translated label"
+"My Help": "My translated help"
+```
+
 Advanced usage
 --------------
 

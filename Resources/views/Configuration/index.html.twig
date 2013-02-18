@@ -43,7 +43,7 @@
                             <div class="controls">
                                 {{ form_widget(input) }}
                                 {% if sub.vars.value.help %}
-                                    <span class="help-block sonata-ba-field-help">{{ sub.vars.value.help }}</span>
+                                    <span class="help-block sonata-ba-field-help">{{ sub.vars.value.help|trans({}, 'VinceTAdminConfigurationBundle') }}</span>
                                 {% endif %}
                             </div>
                         </div>
