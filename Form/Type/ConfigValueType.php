@@ -14,6 +14,10 @@ namespace VinceT\AdminConfigurationBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use VinceT\AdminConfigurationBundle\Event\AdminConfigurationFormCreateOptionsEvent;
+use VinceT\AdminConfigurationBundle\Event\AdminConfigurationEvents;
 
 /**
  * ConfigValueType
@@ -24,8 +28,31 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class ConfigValueType extends AbstractType
+class ConfigValueType extends AbstractType implements ContainerAwareInterface
 {
+    protected $container = null;
+
+    /**
+     * [__construct description]
+     *
+     * @param ContainerInterface $container [description]
+     */
+    public function __construct(ContainerInterface $container)
+    {
+        $this->setContainer($container);
+    }
+
+    /**
+     * Sets the Container.
+     *
+     * @param ContainerInterface $container A ContainerInterface instance
+     *
+     * @return null
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+    }
 
     /**
      * [buildForm description]
@@ -60,6 +87,15 @@ class ConfigValueType extends AbstractType
             'required' => false,
         );
         $formOptions = array_merge($formOptions, $defaultFormOptions);
+
+
+        $dispatcher = $this->container->get('event_dispatcher');
+
+        $event = new AdminConfigurationFormCreateOptionsEvent($configValue->getPath(), $formOptions);
+        $dispatcher->dispatch(AdminConfigurationEvents::ADMIN_CONFIGURATION_FORM_OPTIONS_CREATE, $event);
+
+        $formOptions = $event->getFormOptions();
+
         $builder
             ->add(
                 'value',

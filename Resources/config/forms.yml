@@ -15,6 +15,8 @@ parameters:
 services:
     admin.configuration.form.type.configvalue:
         class: %admin.configuration.form.type.configvalue.class%
+        arguments:
+            - @service_container
         tags:
             - { name: form.type, alias: admin_configuration_configvalue }
     admin.configuration.form.type.configvalue.text:

@@ -41,5 +41,36 @@ For example, if you want to set the years used in a DateTime form type you must 
 }
 ```
 
+An other way to alter the form options is to use a event listener. When creating a form an event is dispatch with the value path and the form options.
+
+Just create the event listener:
+```php
+<?php
+
+namespace Acme\DemoBundle\EventListener;
+
+
+class AdminConfigurationListener
+{
+    public function createOptions($event)
+    {
+        if ( $event->getPath() === 'general:general:datetime_value' ) {
+            $options = $event->getFormOptions();
+            $options['years'] = range(1901, date('Y'));
+            $event->setFormOptions($options);
+        }
+    }
+}
+```
+
+and register this listener in services.yml:
+```yml
+services:
+    kernel.listener.vincet_test_admin_configuration_listener:
+        class: Acme\DemoBundle\EventListener\AdminConfigurationListener
+        tags:
+            - { name: kernel.event_listener, event: admin.configuration.form.options.create, method: createOptions }
+```
+
 
 [1]: https://github.com/vincenttouzet/AdminConfigurationBundle/blob/master/Resources/doc/create_type.md
