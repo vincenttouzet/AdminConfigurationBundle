@@ -99,7 +99,7 @@ class ConfigurationController extends BaseController
      *
      * @return [type]
      */
-    protected function renderTemplate(ConfigGroup $group)
+    protected function renderTemplate(ConfigGroup $group = null)
     {
         $adminPool = $this->container->get('sonata.admin.pool');
         return $this->render(
@@ -123,17 +123,19 @@ class ConfigurationController extends BaseController
      *
      * @return [type]
      */
-    protected function createConfigGroupForm(ConfigGroup $group)
+    protected function createConfigGroupForm(ConfigGroup $group = null)
     {
         $formBuilder = $this->createFormBuilder();
-        $values = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findByConfigGroupId($group->getId());
-        foreach ($values as $configValue) {
-            $sub = $this->container->get('form.factory')->createNamedBuilder(
-                $configValue->getPath(),
-                'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
-                $configValue
-            );
-            $formBuilder->add($sub);
+        if ( $group ) {
+            $values = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findByConfigGroupId($group->getId());
+            foreach ($values as $configValue) {
+                $sub = $this->container->get('form.factory')->createNamedBuilder(
+                    $configValue->getPath(),
+                    'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
+                    $configValue
+                );
+                $formBuilder->add($sub);
+            }
         }
         return $formBuilder->getForm();
     }

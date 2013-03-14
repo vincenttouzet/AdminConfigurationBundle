@@ -56,5 +56,6 @@
             </div>
         </form>
     {% else %}
+        {{ 'There is no configuration group existing. You can begin by create a <a href="%section_path%">config section</a> with a <a href="%group_path%">config group</a> within it.'|trans({'%section_path%':admin_section.generateUrl('create'), '%group_path%':admin_group.generateUrl('create')}, 'VinceTAdminConfigurationBundle')|raw }}
     {% endif %}
 {% endblock %}

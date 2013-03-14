@@ -7,6 +7,8 @@
 "Manage Groups": "Gérer les groupes"
 "Manage Values": "Gérer les valeurs"
 "Manage Types": "Gérer les types"
+"There is no configuration group existing. You can begin by create a <a href=\"%section_path%\">config section</a> with a <a href=\"%group_path%\">config group</a> within it.":
+    "Il n'y a pas de groupe de configuration existant. Vous pouvez commencer en créant une <a href=\"%section_path%\">section</a> ainsi qu'un <a href=\"%group_path%\">groupe</a> à l'intérieur."
 admin:
     configuration:
         title: 'Configuration'
