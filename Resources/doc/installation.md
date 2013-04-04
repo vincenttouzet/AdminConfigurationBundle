@@ -26,7 +26,7 @@ In app/config/routing.yml add:
 ```yml
 vince_t_admin_configuration:
     resource: "@VinceTAdminConfigurationBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 ```
 
