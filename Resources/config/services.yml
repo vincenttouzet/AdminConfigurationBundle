@@ -90,3 +90,10 @@ services:
             - [setTranslationDomain, [VinceTAdminConfigurationBundleConfigType]]
             - [setModelManager, ['@admin.configuration.configtype_manager']]
             - [setTemplate, [list, 'VinceTAdminConfigurationBundle:Configuration:list.html.twig']]
+
+    vince_t.admin.configuration.validator.name:
+        class: VinceT\AdminConfigurationBundle\Validator\Constraints\IsValidNameValidator
+        tags:
+            - { name: validator.constraint_validator, alias: vince_t_admin_name_validator }
+        calls:
+            - [setContainer, ['@service_container']]

@@ -10,3 +10,6 @@
 admin:
     configuration:
         title: 'Configuration'
+form:
+    validation:
+        name: 'The name "%string%" is not valid. It must only contains lowercase (a-z) and underscores (_).'

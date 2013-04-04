@@ -7,8 +7,13 @@
 "Manage Groups": "Gérer les groupes"
 "Manage Values": "Gérer les valeurs"
 "Manage Types": "Gérer les types"
+"Save configuration": "Enregistrer la configuration"
+"The configuration has been successfully saved.": "La configuration a bien été enregistrée."
 "There is no configuration group existing. You can begin by create a <a href=\"%section_path%\">config section</a> with a <a href=\"%group_path%\">config group</a> within it.":
     "Il n'y a pas de groupe de configuration existant. Vous pouvez commencer en créant une <a href=\"%section_path%\">section</a> ainsi qu'un <a href=\"%group_path%\">groupe</a> à l'intérieur."
 admin:
     configuration:
         title: 'Configuration'
+form:
+    validation:
+        name: "Le nom \"%string%\" n'est pas valide. Il ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."
