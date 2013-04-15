@@ -16,6 +16,7 @@ In app/appKernel.php add the following line to register the bundle:
 ```php
 [...]
             new VinceT\AdminConfigurationBundle\VinceTAdminConfigurationBundle(),
+            new VinceT\BootstrapFormBundle\VinceTBootstrapFormBundle(),
 [...]
 ```
 
