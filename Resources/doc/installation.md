@@ -15,8 +15,10 @@ php composer.phar require vincet/admin-configuration-bundle
 In app/appKernel.php add the following line to register the bundle:
 ```php
 [...]
-            new VinceT\AdminConfigurationBundle\VinceTAdminConfigurationBundle(),
+            new VinceT\BaseBundle\VinceTBaseBundle(),
+            new VinceT\AdminBundle\VinceTAdminBundle('SonataAdminBundle'),
             new VinceT\BootstrapFormBundle\VinceTBootstrapFormBundle(),
+            new VinceT\AdminConfigurationBundle\VinceTAdminConfigurationBundle(),
 [...]
 ```
 
@@ -29,6 +31,13 @@ vince_t_admin_configuration:
     resource: "@VinceTAdminConfigurationBundle/Resources/config/routing.yml"
     prefix:   /admin
 
+```
+
+4) Install assets
+-----------------
+
+```
+php app/console assets:install --symlink
 ```
 
 The bundle is now installed and you can begin to [**use it**][1].
