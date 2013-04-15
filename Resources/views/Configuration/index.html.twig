@@ -59,3 +59,16 @@
         {{ 'There is no configuration group existing. You can begin by create a <a href="%section_path%">config section</a> with a <a href="%group_path%">config group</a> within it.'|trans({'%section_path%':admin_section.generateUrl('create'), '%group_path%':admin_group.generateUrl('create')}, 'VinceTAdminConfigurationBundle')|raw }}
     {% endif %}
 {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/datepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/bootstrap-timepicker.min.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-forms.js')}}"></script>
+{% endblock %}

@@ -15,7 +15,7 @@ php composer.phar require vincet/admin-configuration-bundle
 In app/appKernel.php add the following line to register the bundle:
 ```php
 [...]
-            new VinceT\AdminBundle\VinceTAdminConfigurationBundle(),
+            new VinceT\AdminConfigurationBundle\VinceTAdminConfigurationBundle(),
 [...]
 ```
 

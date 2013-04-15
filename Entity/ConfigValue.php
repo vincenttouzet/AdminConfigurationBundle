@@ -308,11 +308,20 @@ class ConfigValue
      */
     public function getPath()
     {
+        $sname = '';
+        $gname = '';
+        $vname = $this->getName();
+        if ( $this->getConfigGroup() ) {
+            if ( $this->getConfigGroup()->getConfigSection() ) {
+                $sname = $this->getConfigGroup()->getConfigSection()->getName();
+            }
+            $gname = $this->getConfigGroup()->getName();
+        }
         return sprintf(
             '%s:%s:%s',
-            $this->getConfigGroup()->getConfigSection()->getName(),
-            $this->getConfigGroup()->getName(),
-            $this->getName()
+            $sname,
+            $gname,
+            $vname
         );
     }
 

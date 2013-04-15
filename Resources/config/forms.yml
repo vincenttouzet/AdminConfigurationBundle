@@ -12,6 +12,10 @@ parameters:
     admin.configuration.form.type.configvalue.datetime.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueDateTimeType
     admin.configuration.form.type.configvalue.date.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueDateType
     admin.configuration.form.type.configvalue.time.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTimeType
+
+    admin.configuration.form.type.configvalue.bootstrap.datepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDatePickerType
+    admin.configuration.form.type.configvalue.bootstrap.timepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapTimePickerType
+    admin.configuration.form.type.configvalue.bootstrap.datetimepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDateTimePickerType
 services:
     admin.configuration.form.type.configvalue:
         class: %admin.configuration.form.type.configvalue.class%
@@ -67,3 +71,16 @@ services:
         class: %admin.configuration.form.type.configvalue.time.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_time }
+
+    admin.configuration.form.type.configvalue.bootstrap.datepicker:
+        class: %admin.configuration.form.type.configvalue.bootstrap.datepicker.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_datepicker }
+    admin.configuration.form.type.configvalue.bootstrap.timepicker:
+        class: %admin.configuration.form.type.configvalue.bootstrap.timepicker.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_timepicker }
+    admin.configuration.form.type.configvalue.bootstrap.datetimepicker:
+        class: %admin.configuration.form.type.configvalue.bootstrap.datetimepicker.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_datetimepicker }

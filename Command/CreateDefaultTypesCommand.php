@@ -72,6 +72,9 @@ EOF
             'datetime' => 'DateTime',
             'date' => 'Date',
             'time' => 'Time',
+            'bootstrap_datepicker' => 'DatePicker',
+            'bootstrap_timepicker' => 'TimePicker',
+            'bootstrap_datetimepicker' => 'DateTimePicker',
         );
 
         foreach ($types as $formType => $label) {

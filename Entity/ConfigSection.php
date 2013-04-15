@@ -197,6 +197,6 @@ class ConfigSection
      */
     public function __toString()
     {
-        return $this->getSlabel();
+        return sprintf('%s', $this->getSlabel());
     }
 }

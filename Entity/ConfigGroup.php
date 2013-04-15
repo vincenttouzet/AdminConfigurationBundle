@@ -228,10 +228,15 @@ class ConfigGroup
      */
     public function __toString()
     {
+        $slabel = '';
+        if ( $this->getConfigSection() ) {
+            $slabel = $this->getConfigSection()->getSlabel();
+        }
+        $glabel = $this->getGlabel();
         return sprintf(
             '%s > %s',
-            $this->getConfigSection()->getSlabel(),
-            $this->getGlabel()
+            $slabel,
+            $glabel
         );
     }
 }

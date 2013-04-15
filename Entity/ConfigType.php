@@ -187,6 +187,6 @@ class ConfigType
      */
     public function __toString()
     {
-        return $this->getTlabel();
+        return sprintf('%s', $this->getTlabel());
     }
 }
