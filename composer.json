@@ -18,5 +18,6 @@
     "autoload": {
         "psr-0": { "VinceT\\AdminConfigurationBundle": "" }
     },
-    "target-dir": "VinceT/AdminConfigurationBundle"
+    "target-dir": "VinceT/AdminConfigurationBundle",
+    "minimum-stability": "dev"
 }
