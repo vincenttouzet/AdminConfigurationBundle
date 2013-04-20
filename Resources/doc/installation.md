@@ -18,6 +18,7 @@ In app/appKernel.php add the following line to register the bundle:
             new VinceT\BaseBundle\VinceTBaseBundle(),
             new VinceT\AdminBundle\VinceTAdminBundle('SonataAdminBundle'),
             new VinceT\BootstrapFormBundle\VinceTBootstrapFormBundle(),
+            new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
             new VinceT\AdminConfigurationBundle\VinceTAdminConfigurationBundle(),
 [...]
 ```

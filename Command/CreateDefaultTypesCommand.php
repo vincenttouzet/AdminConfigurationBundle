@@ -72,6 +72,7 @@ EOF
             'datetime' => 'DateTime',
             'date' => 'Date',
             'time' => 'Time',
+            'ckeditor' => 'WYSIWYG editor',
             'bootstrap_datepicker' => 'DatePicker',
             'bootstrap_timepicker' => 'TimePicker',
             'bootstrap_datetimepicker' => 'DateTimePicker',

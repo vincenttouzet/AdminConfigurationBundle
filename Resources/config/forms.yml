@@ -13,6 +13,8 @@ parameters:
     admin.configuration.form.type.configvalue.date.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueDateType
     admin.configuration.form.type.configvalue.time.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTimeType
 
+    admin.configuration.form.type.configvalue.ckeditor.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueCKEditorType
+
     admin.configuration.form.type.configvalue.bootstrap.datepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDatePickerType
     admin.configuration.form.type.configvalue.bootstrap.timepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapTimePickerType
     admin.configuration.form.type.configvalue.bootstrap.datetimepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDateTimePickerType
@@ -71,6 +73,11 @@ services:
         class: %admin.configuration.form.type.configvalue.time.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_time }
+
+    admin.configuration.form.type.configvalue.ckeditor:
+        class: %admin.configuration.form.type.configvalue.ckeditor.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_ckeditor }
 
     admin.configuration.form.type.configvalue.bootstrap.datepicker:
         class: %admin.configuration.form.type.configvalue.bootstrap.datepicker.class%
