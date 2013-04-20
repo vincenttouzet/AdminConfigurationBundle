@@ -13,11 +13,11 @@
         "php": ">=5.3.2",
         "vincet/base-bundle": "dev-master",
         "vincet/admin-bundle": "dev-master",
-        "vincet/bootstrap-form-bundle": "dev-master"
+        "vincet/bootstrap-form-bundle": "dev-master",
+        "trsteel/ckeditor-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "VinceT\\AdminConfigurationBundle": "" }
     },
-    "target-dir": "VinceT/AdminConfigurationBundle",
-    "minimum-stability": "dev"
+    "target-dir": "VinceT/AdminConfigurationBundle"
 }
