@@ -76,6 +76,12 @@ EOF
             'bootstrap_datepicker' => 'DatePicker',
             'bootstrap_timepicker' => 'TimePicker',
             'bootstrap_datetimepicker' => 'DateTimePicker',
+            'bootstrap_email' => 'Bootstrap Email',
+            'bootstrap_money' => 'Bootstrap Price',
+            'bootstrap_percent' => 'Bootstrap Percent',
+            'bootstrap_daterangepicker' => 'DateRangePicker',
+            'bootstrap_colorpicker' => 'ColorPicker',
+            'bootstrap_slider' => 'Slider',
         );
 
         foreach ($types as $formType => $label) {

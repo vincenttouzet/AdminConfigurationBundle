@@ -64,11 +64,19 @@
     {{ parent() }}
     <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/datepicker.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/bootstrap-timepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/daterangepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/colorpicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/slider.css')}}">
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/date.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/daterangepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/daterangepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-colorpicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-slider.js')}}"></script>
     <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-forms.js')}}"></script>
 {% endblock %}

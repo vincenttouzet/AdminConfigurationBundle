@@ -18,6 +18,12 @@ parameters:
     admin.configuration.form.type.configvalue.bootstrap.datepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDatePickerType
     admin.configuration.form.type.configvalue.bootstrap.timepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapTimePickerType
     admin.configuration.form.type.configvalue.bootstrap.datetimepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDateTimePickerType
+    admin.configuration.form.type.configvalue.bootstrap.email.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapEmailType
+    admin.configuration.form.type.configvalue.bootstrap.money.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapMoneyType
+    admin.configuration.form.type.configvalue.bootstrap.percent.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapPercentType
+    admin.configuration.form.type.configvalue.bootstrap.daterangepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDateRangePickerType
+    admin.configuration.form.type.configvalue.bootstrap.colorpicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapColorPickerType
+    admin.configuration.form.type.configvalue.bootstrap.slider.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapSliderType
 services:
     admin.configuration.form.type.configvalue:
         class: %admin.configuration.form.type.configvalue.class%
@@ -91,3 +97,27 @@ services:
         class: %admin.configuration.form.type.configvalue.bootstrap.datetimepicker.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_bootstrap_datetimepicker }
+    admin.configuration.form.type.configvalue.bootstrap.email:
+        class: %admin.configuration.form.type.configvalue.bootstrap.email.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_email }
+    admin.configuration.form.type.configvalue.bootstrap.money:
+        class: %admin.configuration.form.type.configvalue.bootstrap.money.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_money }
+    admin.configuration.form.type.configvalue.bootstrap.percent:
+        class: %admin.configuration.form.type.configvalue.bootstrap.percent.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_percent }
+    admin.configuration.form.type.configvalue.bootstrap.daterangepicker:
+        class: %admin.configuration.form.type.configvalue.bootstrap.daterangepicker.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_daterangepicker }
+    admin.configuration.form.type.configvalue.bootstrap.colorpicker:
+        class: %admin.configuration.form.type.configvalue.bootstrap.colorpicker.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_colorpicker }
+    admin.configuration.form.type.configvalue.bootstrap.slider:
+        class: %admin.configuration.form.type.configvalue.bootstrap.slider.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_slider }
