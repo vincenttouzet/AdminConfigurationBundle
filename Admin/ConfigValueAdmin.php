@@ -83,8 +83,6 @@ class ConfigValueAdmin extends BaseAdmin
             ->add('configType', 'sonata_type_model')
             ->add('name')
             ->add('vlabel')
-            ->add('value')
-            ->add('help')
             ->add('position')
             ->add(
                 '_action', 
