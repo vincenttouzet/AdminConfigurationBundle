@@ -20,5 +20,5 @@ To retrieve a value from a twig template:
 
 See how to [**install**][1] and [**use**][2] this bundle.
 
-[1]: https://github.com/vincenttouzet/AdminConfigurationBundle/blob/master/Resources/doc/installation.md 
-[2]: https://github.com/vincenttouzet/AdminConfigurationBundle/blob/master/Resources/doc/getting_started.md
+[1]: Resources/doc/installation.md 
+[2]: Resources/doc/getting_started.md

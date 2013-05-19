@@ -9,14 +9,13 @@
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
 
-namespace VinceT\AdminConfigurationBundle;
+namespace VinceT\AdminConfigurationBundle\DependencyInjection\Compiler;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use VinceT\AdminConfigurationBundle\DependencyInjection\Compiler\AdminConfigurationCompiler;
 
 /**
- * VinceTAdminConfigurationBundle
+ * AdminConfigurationCompiler
  *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
@@ -24,19 +23,23 @@ use VinceT\AdminConfigurationBundle\DependencyInjection\Compiler\AdminConfigurat
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class VinceTAdminConfigurationBundle extends Bundle
+class AdminConfigurationCompiler implements CompilerPassInterface
 {
     /**
-     * [build description]
+     * Process
      *
      * @param ContainerBuilder $container Container builder
      *
      * @return null
      */
-    public function build(ContainerBuilder $container)
+    public function process(ContainerBuilder $container)
     {
-        parent::build($container);
-
-        $container->addCompilerPass(new AdminConfigurationCompiler());
+        $pool = $container->getDefinition('admin.configuration.pool');
+        // get tagged services
+        $configurations = array();
+        foreach ($container->findTaggedServiceIds('admin.configuration') as $id => $attributes) {
+            $configurations[$id] = $attributes;
+        }
+        $pool->addMethodCall('setConfigurations', array($configurations));
     }
-}
+} 

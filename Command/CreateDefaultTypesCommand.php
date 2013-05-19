@@ -15,11 +15,10 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
-use VinceT\AdminConfigurationBundle\Entity\ConfigType;
 
 
 /**
- * This file is part of VinceTAdminConfigurationBundle for Symfony2
+ * CreateDefaultTypesCommand
  *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
@@ -57,8 +56,6 @@ EOF
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $typeManager = $this->getContainer()->get('admin.configuration.configtype_manager');
-        $repo = $typeManager->getRepository();
         $types = array(
             'text' => 'Text Field',
             'textarea' => 'Text Area',
@@ -84,14 +81,16 @@ EOF
             'bootstrap_slider' => 'Slider',
         );
 
+        $configBuilder = $this->getContainer()->get('admin.configuration.configbuilder');
+
         foreach ($types as $formType => $label) {
-            $type = $repo->findOneByFormType($formType);
-            if ( !$type ) {
-                $type = new ConfigType();
-                $type->setTLabel($label);
-                $type->setFormType($formType);
+            $created = $configBuilder->addType(
+                $formType,
+                $label,
+                $formType
+            );
+            if ( $created ) {
                 $output->writeln(sprintf('<info>Create type %s</info>', $formType));
-                $typeManager->create($type);
             } else {
                 $output->writeln(sprintf('<comment>Type %s already exists.</comment>', $formType));
             }

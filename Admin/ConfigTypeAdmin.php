@@ -38,6 +38,7 @@ class ConfigTypeAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('identifier')
             ->add('tlabel')
             ->add('formType')
             ->add('options');
@@ -54,6 +55,7 @@ class ConfigTypeAdmin extends BaseAdmin
     {
         $datagridMapper
             ->add('id')
+            ->add('identifier')
             ->add('tlabel')
             ->add('formType');
     }
@@ -69,6 +71,7 @@ class ConfigTypeAdmin extends BaseAdmin
     {
         $listMapper
             ->add('id')
+            ->add('identifier')
             ->add('tlabel')
             ->add('formType')
             ->add(
@@ -95,6 +98,7 @@ class ConfigTypeAdmin extends BaseAdmin
     {
         $showMapper
             ->add('id')
+            ->add('identifier')
             ->add('tlabel')
             ->add('formType');
     }

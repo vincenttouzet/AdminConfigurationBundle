@@ -39,6 +39,13 @@ class ConfigType
     /**
      * @var string
      *
+     * @ORM\Column(name="identifier", type="string", length=255)
+     */
+    private $identifier;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="tlabel", type="string", length=255)
      */
     private $tlabel;
@@ -70,6 +77,29 @@ class ConfigType
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set identifier
+     *
+     * @param string $identifier
+     * @return ConfigType
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+    
+        return $this;
+    }
+
+    /**
+     * Get identifier
+     *
+     * @return string 
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
     }
 
     /**
@@ -188,5 +218,12 @@ class ConfigType
     public function __toString()
     {
         return sprintf('%s', $this->getTlabel());
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->configValues = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

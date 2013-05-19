@@ -9,7 +9,7 @@ A value require a Type. At least you must create a section, a group and a type. 
 php app/console vincet:admin-configuration:install-types
 ```
 
-You can also [**add a custom type**][1].
+You can also [**add a custom type**][1] and [**create all entites from your bundle**][2].
 
 Once you have defined at least a section, a group and a type you can add values and then use the administration panel (http://www.example.com/admin/configuration) to change it.
 
@@ -84,4 +84,5 @@ services:
 ```
 
 
-[1]: https://github.com/vincenttouzet/AdminConfigurationBundle/blob/master/Resources/doc/create_type.md
+[1]: create_type.md
+[1]: create_config_from_bundle.md

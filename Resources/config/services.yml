@@ -5,6 +5,8 @@ parameters:
     admin.configuration.configvalue_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigValueManager
     admin.configuration.configgroup_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigGroupManager
     admin.configuration.configsection_manager.class: VinceT\AdminConfigurationBundle\Manager\ConfigSectionManager
+    admin.configuration.configbuilder.class: VinceT\AdminConfigurationBundle\Configuration\AdminConfigurationBuilder
+    admin.configuration.pool.class: VinceT\AdminConfigurationBundle\Configuration\Pool
 services:
     admin.configuration.twig.extension:
         class: %admin.configuration.twig.extension.class%
@@ -97,3 +99,12 @@ services:
             - { name: validator.constraint_validator, alias: vince_t_admin_name_validator }
         calls:
             - [setContainer, ['@service_container']]
+
+    admin.configuration.configbuilder:
+        class: %admin.configuration.configbuilder.class%
+        arguments:
+            - @service_container
+    admin.configuration.pool:
+        class: %admin.configuration.pool.class%
+        arguments:
+            - @service_container
