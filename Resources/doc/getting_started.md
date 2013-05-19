@@ -85,4 +85,4 @@ services:
 
 
 [1]: create_type.md
-[1]: create_config_from_bundle.md
+[2]: create_config_from_bundle.md
