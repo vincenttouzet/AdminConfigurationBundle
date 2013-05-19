@@ -3,7 +3,7 @@ vince_t_admin_configuration_homepage:
     defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:index }
 
 vince_t_admin_configuration_group:
-    pattern:  /configuration/section/{sname}/group/{id}/{gname}
+    pattern:  /configuration/{sname}/{gname}
     defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:group }
     requirements: 
         id: \d+

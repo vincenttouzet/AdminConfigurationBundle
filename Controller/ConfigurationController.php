@@ -49,12 +49,17 @@ class ConfigurationController extends BaseController
     /**
      * [groupAction description]
      *
-     * @param ConfigGroup $group [description]
+     * @param string $gname [description]
      * 
      * @return [type]
      */
-    public function groupAction(ConfigGroup $group)
+    public function groupAction($gname)
     {
+        $group = $this->get('admin.configuration.configgroup_manager')->getRepository()->findOneByName($gname);
+        if ( !$group ) {
+            $message = $this->get('translator')->trans('The group with name "%name%" does not exist.', array('%name%'=>$gname), 'VinceTAdminConfigurationBundle');
+            throw $this->createNotFoundException($message);
+        }
         return $this->renderTemplate($group);
     }
 
@@ -171,7 +176,7 @@ class ConfigurationController extends BaseController
                         'route' => 'vince_t_admin_configuration_group',
                         'routeParameters' => array(
                             'sname' => $section->getName(),
-                            'id' => $group->getId(),
+                            //'id' => $group->getId(),
                             'gname' => $group->getName(),
                         ),
                     )
