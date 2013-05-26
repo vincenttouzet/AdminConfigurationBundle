@@ -62,21 +62,25 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/datepicker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/bootstrap-timepicker.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/daterangepicker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/colorpicker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/css/slider.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-datepicker/css/datepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-timepicker/css/bootstrap-timepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-colorpicker/css/colorpicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-slider/css/slider.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('bundles/vincetbootstrapform/bootstrap-chosen/chosen/chosen.css')}}">
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-timepicker.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/date.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/daterangepicker.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/daterangepicker.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-colorpicker.js')}}"></script>
-    <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-slider.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-timepicker/js/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-daterangepicker/date.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-slider/js/bootstrap-slider.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/bootstrap-chosen/chosen/chosen.jquery.min.js')}}"></script>
+    <script src="{{asset('bundles/vincetbootstrapform/knob/js/jquery.knob.js')}}"></script>
     <script src="{{asset('bundles/vincetbootstrapform/js/bootstrap-forms.js')}}"></script>
 {% endblock %}

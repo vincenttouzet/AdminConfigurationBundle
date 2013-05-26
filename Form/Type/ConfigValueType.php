@@ -70,13 +70,13 @@ class ConfigValueType extends AbstractType implements ContainerAwareInterface
         if ( $configValue->getConfigType()->getOptions()
             && $typeOptions = json_decode($configValue->getConfigType()->getOptions())
         ) {
-            $typeOptions = get_object_vars($typeOptions);
+            $typeOptions = $this->_recursiveGetObjectVars($typeOptions);
             $formOptions = array_merge($formOptions, $typeOptions);
         }
         if ( $configValue->getOptions()
             && $valueOptions = json_decode($configValue->getOptions())
         ) {
-            $valueOptions = get_object_vars($valueOptions);
+            $valueOptions = $this->_recursiveGetObjectVars($valueOptions);
             $formOptions = array_merge($formOptions, $valueOptions);
         }
         $defaultFormOptions = array(
@@ -129,5 +129,24 @@ class ConfigValueType extends AbstractType implements ContainerAwareInterface
     public function getName()
     {
         return 'admin_configuration_configvalue';
+    }
+
+    /**
+     * get_object_vars recursive
+     *
+     * @param Object $object Object to get vars
+     *
+     * @return array
+     */
+    private function _recursiveGetObjectVars($object)
+    {
+        $vars = $object;
+        if ( is_object($object) ) {
+            $vars = get_object_vars($object);
+            foreach ($vars as $key => $value) {
+                $vars[$key] = $this->_recursiveGetObjectVars($value);
+            }
+        }
+        return $vars;
     }
 }
