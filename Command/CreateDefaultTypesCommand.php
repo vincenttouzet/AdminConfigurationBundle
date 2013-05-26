@@ -61,6 +61,7 @@ EOF
             'textarea' => 'Text Area',
             'email' => 'Email',
             'checkbox' => 'Boolean',
+            'choice' => 'Choice',
             'integer' => 'Integer',
             'number' => 'Number',
             'money' => 'Price',
@@ -79,6 +80,8 @@ EOF
             'bootstrap_daterangepicker' => 'DateRangePicker',
             'bootstrap_colorpicker' => 'ColorPicker',
             'bootstrap_slider' => 'Slider',
+            'bootstrap_chosen' => 'Chosen',
+            'knob' => 'Knob',
         );
 
         $configBuilder = $this->getContainer()->get('admin.configuration.configbuilder');

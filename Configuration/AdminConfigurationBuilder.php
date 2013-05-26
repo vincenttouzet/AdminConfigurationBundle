@@ -154,7 +154,7 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
      *
      * @return boolean
      */
-    public function addValue($sectionName, $groupName, $name, $type, $label, $value, $help, $formOptions=array(), $position=0)
+    public function addValue($sectionName, $groupName, $name, $type, $label, $value='', $help='', $formOptions=array(), $position=0)
     {
         $groupManager = $this->container->get('admin.configuration.configgroup_manager');
         $valueManager = $this->container->get('admin.configuration.configvalue_manager');
@@ -176,7 +176,7 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
             $value->setVLabel($label);
             $value->setHelp($help);
             if ( is_array($formOptions) && count($formOptions) ) {
-                $type->setOptions(json_encode($formOptions));
+                $value->setOptions(json_encode($formOptions));
             }
             $value->setPosition($position);
             $valueManager->create($value);

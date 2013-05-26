@@ -4,6 +4,7 @@ parameters:
     admin.configuration.form.type.configvalue.textarea.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueTextareaType
     admin.configuration.form.type.configvalue.email.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueEmailType
     admin.configuration.form.type.configvalue.checkbox.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueCheckboxType
+    admin.configuration.form.type.configvalue.choice.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueChoiceType
     admin.configuration.form.type.configvalue.integer.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueIntegerType
     admin.configuration.form.type.configvalue.number.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueNumberType
     admin.configuration.form.type.configvalue.money.class: VinceT\AdminConfigurationBundle\Form\Type\ConfigValueMoneyType
@@ -24,6 +25,8 @@ parameters:
     admin.configuration.form.type.configvalue.bootstrap.daterangepicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapDateRangePickerType
     admin.configuration.form.type.configvalue.bootstrap.colorpicker.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapColorPickerType
     admin.configuration.form.type.configvalue.bootstrap.slider.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapSliderType
+    admin.configuration.form.type.configvalue.bootstrap.chosen.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapChosenType
+    admin.configuration.form.type.configvalue.bootstrap.knob.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueKnobType
 services:
     admin.configuration.form.type.configvalue:
         class: %admin.configuration.form.type.configvalue.class%
@@ -47,6 +50,10 @@ services:
         class: %admin.configuration.form.type.configvalue.checkbox.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_checkbox }
+    admin.configuration.form.type.configvalue.choice:
+        class: %admin.configuration.form.type.configvalue.choice.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_choice }
     admin.configuration.form.type.configvalue.integer:
         class: %admin.configuration.form.type.configvalue.integer.class%
         tags:
@@ -121,3 +128,11 @@ services:
         class: %admin.configuration.form.type.configvalue.bootstrap.slider.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_bootstrap_slider }
+    admin.configuration.form.type.configvalue.bootstrap.chosen:
+        class: %admin.configuration.form.type.configvalue.bootstrap.chosen.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_chosen }
+    admin.configuration.form.type.configvalue.bootstrap.knob:
+        class: %admin.configuration.form.type.configvalue.bootstrap.knob.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_knob }
