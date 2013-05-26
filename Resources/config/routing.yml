@@ -2,14 +2,14 @@ vince_t_admin_configuration_homepage:
     pattern:  /configuration
     defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:index }
 
-vince_t_admin_configuration_group:
-    pattern:  /configuration/{sname}/{gname}
-    defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:group }
-    requirements: 
-        id: \d+
-
 vince_t_admin_configuration_save:
     pattern: /configuration/save/{id}
     defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:save }
     requirements:
         methods: 'POST'
+
+vince_t_admin_configuration_group:
+    pattern:  /configuration/{sname}/{gname}
+    defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:group }
+    requirements: 
+        id: \d+
