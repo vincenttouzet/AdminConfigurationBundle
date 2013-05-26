@@ -89,7 +89,6 @@ class ConfigurationController extends BaseController
             $this->generateUrl(
                 'vince_t_admin_configuration_group', 
                 array(
-                    'id' => $group->getId(),
                     'sname' => $group->getConfigSection()->getName(),
                     'gname' => $group->getName()
                 )
