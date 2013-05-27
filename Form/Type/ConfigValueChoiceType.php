@@ -27,19 +27,7 @@ use VinceT\AdminConfigurationBundle\Form\DataTransformer\StringToArrayTransforme
  */
 class ConfigValueChoiceType extends AbstractType
 {
-    /**
-     * [buildForm description]
-     *
-     * @param FormBuilderInterface $builder [description]
-     * @param array                $options [description]
-     *
-     * @return [type]
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        parent::buildForm($builder, $options);
-        $builder->get('value')->addModelTransformer(new StringToArrayTransformer(','));
-    }
+
     /**
      * [getName description]
      *

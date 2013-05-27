@@ -134,7 +134,7 @@ class ConfigurationController extends BaseController
             $values = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findByConfigGroupId($group->getId());
             foreach ($values as $configValue) {
                 $sub = $this->container->get('form.factory')->createNamedBuilder(
-                    $configValue->getPath(),
+                    str_replace(':', '___', $configValue->getPath()),
                     'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
                     $configValue
                 );
