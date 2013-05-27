@@ -29,6 +29,23 @@ class ConfigValueChoiceType extends AbstractType
 {
 
     /**
+     * [buildForm description]
+     *
+     * @param FormBuilderInterface $builder [description]
+     * @param array                $options [description]
+     *
+     * @return [type]
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        parent::buildForm($builder, $options);
+        $form_options = $builder->get('value')->getOptions();
+        if ( $form_options['multiple'] ) {
+            $builder->get('value')->addModelTransformer(new StringToArrayTransformer(','));
+        }
+    }
+
+    /**
      * [getName description]
      *
      * @return string
