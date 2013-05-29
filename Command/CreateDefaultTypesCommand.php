@@ -82,6 +82,7 @@ EOF
             'bootstrap_slider' => 'Slider',
             'bootstrap_chosen' => 'Chosen',
             'knob' => 'Knob',
+            'bootstrap_typeahead' => 'TypeAhead',
         );
 
         $configBuilder = $this->getContainer()->get('admin.configuration.configbuilder');

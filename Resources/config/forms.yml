@@ -27,6 +27,7 @@ parameters:
     admin.configuration.form.type.configvalue.bootstrap.slider.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapSliderType
     admin.configuration.form.type.configvalue.bootstrap.chosen.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapChosenType
     admin.configuration.form.type.configvalue.bootstrap.knob.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueKnobType
+    admin.configuration.form.type.configvalue.bootstrap.typeahead.class: VinceT\AdminConfigurationBundle\Form\Type\Bootstrap\ConfigValueBootstrapTypeAheadType
 services:
     admin.configuration.form.type.configvalue:
         class: %admin.configuration.form.type.configvalue.class%
@@ -136,3 +137,7 @@ services:
         class: %admin.configuration.form.type.configvalue.bootstrap.knob.class%
         tags:
             - { name: form.type, alias: admin_configuration_configvalue_knob }
+    admin.configuration.form.type.configvalue.bootstrap.typeahead:
+        class: %admin.configuration.form.type.configvalue.bootstrap.typeahead.class%
+        tags:
+            - { name: form.type, alias: admin_configuration_configvalue_bootstrap_typeahead }
