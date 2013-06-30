@@ -12,6 +12,7 @@
 namespace VinceT\AdminConfigurationBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
 
 /**
  * Name Validator
@@ -22,7 +23,7 @@ use Symfony\Component\Validator\Constraint;
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class IsValidNameValidator extends ContainerAwareValidator
+class ConfigValueValidator extends ContainerAwareValidator
 {
     /**
      * Validate the value
@@ -34,8 +35,21 @@ class IsValidNameValidator extends ContainerAwareValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        if ( !preg_match('/^[a-z_]+$/', $value) ) {
-            $message = $this->container->get('translator')->trans($constraint->message, array('%string%' => $value), 'VinceTAdminConfigurationBundle');
+        $check = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findOneBySectionGroupAndValueName(
+            $value->getConfigGroup()->getConfigSection()->getName(),
+            $value->getConfigGroup()->getName(),
+            $value->getName()
+        );
+        if ( $check && $check->getId() != $value->getId()) {
+            $message = $this->container->get('translator')->trans(
+                $constraint->message,
+                array(
+                    '%value%' => $value->getName(),
+                    '%group%' => $value->getConfigGroup()->getName(),
+                    '%section%' => $value->getConfigGroup()->getConfigSection()->getName()
+                ),
+                'VinceTAdminConfigurationBundle'
+            );
             $this->context->addViolation($message);
         }
     }

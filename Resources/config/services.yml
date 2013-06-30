@@ -99,6 +99,24 @@ services:
             - { name: validator.constraint_validator, alias: vince_t_admin_name_validator }
         calls:
             - [setContainer, ['@service_container']]
+    vince_t.admin.configuration.validator.configsection:
+        class: VinceT\AdminConfigurationBundle\Validator\Constraints\ConfigSectionValidator
+        tags:
+            - { name: validator.constraint_validator, alias: vince_t_admin_configsection_validator }
+        calls:
+            - [setContainer, ['@service_container']]
+    vince_t.admin.configuration.validator.configgroup:
+        class: VinceT\AdminConfigurationBundle\Validator\Constraints\ConfigGroupValidator
+        tags:
+            - { name: validator.constraint_validator, alias: vince_t_admin_configgroup_validator }
+        calls:
+            - [setContainer, ['@service_container']]
+    vince_t.admin.configuration.validator.configvalue:
+        class: VinceT\AdminConfigurationBundle\Validator\Constraints\ConfigValueValidator
+        tags:
+            - { name: validator.constraint_validator, alias: vince_t_admin_configvalue_validator }
+        calls:
+            - [setContainer, ['@service_container']]
 
     admin.configuration.configbuilder:
         class: %admin.configuration.configbuilder.class%

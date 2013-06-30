@@ -9,20 +9,41 @@
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
 
-namespace VinceT\AdminConfigurationBundle\Manager;
+namespace VinceT\AdminConfigurationBundle\Validator\Constraints;
 
-use VinceT\BaseBundle\Manager\BaseManager;
-use VinceT\AdminConfigurationBundle\Exception\AdminConfigurationException;
+use Symfony\Component\Validator\Constraint;
 
 /**
- * ConfigSectionManager
+ * Name constraint
  *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
  * @author   Vincent Touzet <vincent.touzet@gmail.com>
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
+ * @Annotation
  */
-class ConfigSectionManager extends BaseManager
+class ConfigGroup extends Constraint
 {
+    public $message = 'A group "%group%" already exist in section "%section%".';
+
+    /**
+     * [getTargets description]
+     *
+     * @return [type]
+     */
+    public function getTargets()
+    {
+        return self::CLASS_CONSTRAINT;
+    }
+
+    /**
+     * validatedBy
+     *
+     * @return string
+     */
+    public function validatedBy()
+    {
+        return 'vince_t_admin_configgroup_validator';
+    }
 }

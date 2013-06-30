@@ -25,6 +25,7 @@ use VinceT\AdminConfigurationBundle\Validator\Constraints as AdminConfigurationA
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  * @ORM\Table(name="admin_configuration_section")
  * @ORM\Entity(repositoryClass="VinceT\AdminConfigurationBundle\Repository\ConfigSectionRepository")
+ * @AdminConfigurationAssert\ConfigSection
  */
 class ConfigSection
 {

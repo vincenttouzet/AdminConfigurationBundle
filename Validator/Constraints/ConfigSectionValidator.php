@@ -22,20 +22,27 @@ use Symfony\Component\Validator\Constraint;
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class IsValidNameValidator extends ContainerAwareValidator
+class ConfigSectionValidator extends ContainerAwareValidator
 {
     /**
-     * Validate the value
+     * Validate the section
      *
-     * @param string     $value      [description]
+     * @param string     $section      [description]
      * @param Constraint $constraint [description]
      *
      * @return null
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($section, Constraint $constraint)
     {
-        if ( !preg_match('/^[a-z_]+$/', $value) ) {
-            $message = $this->container->get('translator')->trans($constraint->message, array('%string%' => $value), 'VinceTAdminConfigurationBundle');
+        $check = $this->container->get('admin.configuration.configsection_manager')->getRepository()->findOneByName($section->getName());
+        if ( $check && $check->getId() !== $section->getId() ) {
+            $message = $this->container->get('translator')->trans(
+                $constraint->message,
+                array(
+                    '%section%' => $section->getName()
+                ),
+                'VinceTAdminConfigurationBundle'
+            );
             $this->context->addViolation($message);
         }
     }

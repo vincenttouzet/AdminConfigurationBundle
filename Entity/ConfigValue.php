@@ -14,6 +14,7 @@ namespace VinceT\AdminConfigurationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use VinceT\AdminConfigurationBundle\Validator\Constraints as AdminConfigurationAssert;
 
 /**
  * ConfigValue
@@ -26,6 +27,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="admin_configuration_value")
  * @ORM\Entity(repositoryClass="VinceT\AdminConfigurationBundle\Repository\ConfigValueRepository")
+ * @AdminConfigurationAssert\ConfigValue
  */
 class ConfigValue
 {
@@ -54,6 +56,7 @@ class ConfigValue
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @AdminConfigurationAssert\IsValidName
      */
     private $name;
 

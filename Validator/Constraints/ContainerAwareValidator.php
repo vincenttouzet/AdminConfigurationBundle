@@ -12,6 +12,9 @@
 namespace VinceT\AdminConfigurationBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Name Validator
@@ -22,21 +25,19 @@ use Symfony\Component\Validator\Constraint;
  * @license  MIT License view the LICENSE file that was distributed with this source code.
  * @link     https://github.com/vincenttouzet/AdminConfigurationBundle
  */
-class IsValidNameValidator extends ContainerAwareValidator
+abstract class ContainerAwareValidator extends ConstraintValidator implements ContainerAwareInterface
 {
+    protected $container = null;
+
     /**
-     * Validate the value
+     * Set the service container
      *
-     * @param string     $value      [description]
-     * @param Constraint $constraint [description]
+     * @param ContainerInterface $container The service container
      *
      * @return null
      */
-    public function validate($value, Constraint $constraint)
+    public function setContainer(ContainerInterface $container = null)
     {
-        if ( !preg_match('/^[a-z_]+$/', $value) ) {
-            $message = $this->container->get('translator')->trans($constraint->message, array('%string%' => $value), 'VinceTAdminConfigurationBundle');
-            $this->context->addViolation($message);
-        }
+        $this->container = $container;
     }
 }
