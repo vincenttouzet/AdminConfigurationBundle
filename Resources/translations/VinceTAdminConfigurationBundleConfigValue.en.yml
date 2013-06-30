@@ -44,4 +44,4 @@ form:
     label_help: Help
     label_options: 'Form type options'
     label_position: Position
-    help_name: "A name must only contains lowercase (a-z) and underscores (_)."
+    help_name: "A name must only contains lowercase (a-z), numbers or underscores (_)."

@@ -16,4 +16,4 @@ admin:
         title: 'Configuration'
 form:
     validation:
-        name: "Le nom \"%string%\" n'est pas valide. Il ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."
+        name: "Le nom \"%string%\" n'est pas valide. Il ne doit contenir que des lettres minuscules ([a-z]), des chiffres ou des tirets-bas (_)."

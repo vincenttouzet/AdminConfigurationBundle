@@ -34,7 +34,7 @@ class IsValidNameValidator extends ContainerAwareValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        if ( !preg_match('/^[a-z_]+$/', $value) ) {
+        if ( !preg_match('/^[a-z0-9_]+$/', $value) ) {
             $message = $this->container->get('translator')->trans($constraint->message, array('%string%' => $value), 'VinceTAdminConfigurationBundle');
             $this->context->addViolation($message);
         }

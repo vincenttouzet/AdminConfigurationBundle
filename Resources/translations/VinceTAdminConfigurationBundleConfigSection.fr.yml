@@ -27,4 +27,4 @@ form:
     label_name: Nom
     label_slabel: Libellé
     label_position: Position
-    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]) ou des tirets-bas (_)."
+    help_name: "Le nom ne doit contenir que des lettres minuscules ([a-z]), des chiffres ou des tirets-bas (_)."
