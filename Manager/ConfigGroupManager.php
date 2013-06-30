@@ -12,7 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Manager;
 
 use VinceT\BaseBundle\Manager\BaseManager;
-use VinceT\AdminConfigurationBundle\Exception\AdminConfigurationException;
 
 /**
  * ConfigGroupManager

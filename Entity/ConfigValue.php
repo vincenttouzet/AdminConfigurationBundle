@@ -12,13 +12,11 @@
 namespace VinceT\AdminConfigurationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Validator\Constraints as Assert;
 use VinceT\AdminConfigurationBundle\Validator\Constraints as AdminConfigurationAssert;
 
 /**
  * ConfigValue
- * 
+ *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
  * @author   Vincent Touzet <vincent.touzet@gmail.com>
@@ -106,7 +104,7 @@ class ConfigValue
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,20 +115,20 @@ class ConfigValue
      * Set configGroup
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigGroup $configGroup ConfigGroup
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Entity\ConfigValue
      */
     public function setConfigGroup(\VinceT\AdminConfigurationBundle\Entity\ConfigGroup $configGroup)
     {
         $this->configGroup = $configGroup;
-    
+
         return $this;
     }
 
     /**
      * Get configGroup
      *
-     * @return VinceT\AdminConfigurationBundle\Entity\ConfigGroup 
+     * @return VinceT\AdminConfigurationBundle\Entity\ConfigGroup
      */
     public function getConfigGroup()
     {
@@ -141,20 +139,20 @@ class ConfigValue
      * Set configType
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigType $configType ConfigType
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Entity\ConfigValue
      */
     public function setConfigType(\VinceT\AdminConfigurationBundle\Entity\ConfigType $configType)
     {
         $this->configType = $configType;
-    
+
         return $this;
     }
 
     /**
      * Get configType
      *
-     * @return VinceT\AdminConfigurationBundle\Entity\ConfigType 
+     * @return VinceT\AdminConfigurationBundle\Entity\ConfigType
      */
     public function getConfigType()
     {
@@ -165,20 +163,20 @@ class ConfigValue
      * Set name
      *
      * @param string $name Name
-     * 
+     *
      * @return ConfigValue
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -189,20 +187,20 @@ class ConfigValue
      * Set vlabel
      *
      * @param string $vlabel Label
-     * 
+     *
      * @return ConfigValue
      */
     public function setVlabel($vlabel)
     {
         $this->vlabel = $vlabel;
-    
+
         return $this;
     }
 
     /**
      * Get vlabel
      *
-     * @return string 
+     * @return string
      */
     public function getVlabel()
     {
@@ -213,20 +211,20 @@ class ConfigValue
      * Set value
      *
      * @param string $value Value
-     * 
+     *
      * @return ConfigValue
      */
     public function setValue($value)
     {
         $this->value = $value;
-    
+
         return $this;
     }
 
     /**
      * Get value
      *
-     * @return string 
+     * @return string
      */
     public function getValue()
     {
@@ -235,69 +233,70 @@ class ConfigValue
 
     /**
      * Gets Help
-     * 
+     *
      * @return [type]
      */
     public function getHelp()
     {
         return $this->help;
     }
-    
+
     /**
      * Sets Help
-     * 
+     *
      * @param [type] $help Help
-     * 
+     *
      * @return [type]
      */
     public function setHelp($help)
     {
         $this->help = $help;
+
         return $this;
     }
 
     /**
      * Gets Options
-     * 
+     *
      * @return [type]
      */
     public function getOptions()
     {
         return $this->options;
     }
-    
+
     /**
      * Sets Options
-     * 
+     *
      * @param [type] $options Options
-     * 
+     *
      * @return [type]
      */
     public function setOptions($options)
     {
         $this->options = $options;
+
         return $this;
     }
-    
 
     /**
      * Set position
      *
      * @param integer $position Position
-     * 
+     *
      * @return ConfigValue
      */
     public function setPosition($position)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -320,6 +319,7 @@ class ConfigValue
             }
             $gname = $this->getConfigGroup()->getName();
         }
+
         return sprintf(
             '%s:%s:%s',
             $sname,

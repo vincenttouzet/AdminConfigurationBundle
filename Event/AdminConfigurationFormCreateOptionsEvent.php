@@ -41,13 +41,13 @@ class AdminConfigurationFormCreateOptionsEvent extends Event
 
     /**
      * Gets Path
-     * 
+     *
      * @return string
      */
     public function getPath()
     {
         return $this->path;
-    }    
+    }
 
     /**
      * Gets the formOptions
@@ -58,18 +58,19 @@ class AdminConfigurationFormCreateOptionsEvent extends Event
     {
         return $this->formOptions;
     }
-    
+
     /**
      * Sets FormOptions
-     * 
+     *
      * @param array $formOptions FormOptions
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Event\AdminConfigurationFormCreateOptionsEvent
      */
     public function setFormOptions($formOptions)
     {
         $this->formOptions = $formOptions;
+
         return $this;
     }
-    
+
 }

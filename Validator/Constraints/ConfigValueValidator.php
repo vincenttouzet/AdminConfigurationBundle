@@ -12,7 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\ConstraintValidator;
 
 /**
  * Name Validator

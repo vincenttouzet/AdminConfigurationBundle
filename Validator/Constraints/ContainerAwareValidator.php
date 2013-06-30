@@ -11,7 +11,6 @@
 
 namespace VinceT\AdminConfigurationBundle\Validator\Constraints;
 
-use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;

@@ -11,5 +11,5 @@ vince_t_admin_configuration_save:
 vince_t_admin_configuration_group:
     pattern:  /configuration/{sname}/{gname}
     defaults: { _controller: VinceTAdminConfigurationBundle:Configuration:group }
-    requirements: 
+    requirements:
         id: \d+

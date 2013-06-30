@@ -14,8 +14,6 @@ namespace VinceT\AdminConfigurationBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\HttpFoundation\Request;
-
 
 /**
  * CreateDefaultTypesCommand
@@ -93,7 +91,7 @@ EOF
                 $label,
                 $formType
             );
-            if ( $created ) {
+            if ($created) {
                 $output->writeln(sprintf('<info>Create type %s</info>', $formType));
             } else {
                 $output->writeln(sprintf('<comment>Type %s already exists.</comment>', $formType));

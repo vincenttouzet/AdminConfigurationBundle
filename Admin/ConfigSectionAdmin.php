@@ -75,8 +75,8 @@ class ConfigSectionAdmin extends BaseAdmin
             ->add('slabel')
             ->add('position')
             ->add(
-                '_action', 
-                'actions', 
+                '_action',
+                'actions',
                 array(
                     'actions' => array(
                         'view' => array(),

@@ -12,8 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Form\Type\Bootstrap;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * ConfigValueBootstrapPercentType

@@ -88,7 +88,6 @@ class ConfigValueType extends AbstractType implements ContainerAwareInterface
         );
         $formOptions = array_merge($formOptions, $defaultFormOptions);
 
-
         $dispatcher = $this->container->get('event_dispatcher');
 
         $event = new AdminConfigurationFormCreateOptionsEvent($configValue->getPath(), $formOptions);
@@ -147,6 +146,7 @@ class ConfigValueType extends AbstractType implements ContainerAwareInterface
                 $vars[$key] = $this->_recursiveGetObjectVars($value);
             }
         }
+
         return $vars;
     }
 }

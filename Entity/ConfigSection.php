@@ -12,7 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use VinceT\AdminConfigurationBundle\Validator\Constraints as AdminConfigurationAssert;
 
 /**
@@ -76,7 +75,7 @@ class ConfigSection
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -87,20 +86,20 @@ class ConfigSection
      * Set name
      *
      * @param string $name Name
-     * 
+     *
      * @return ConfigSection
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -111,20 +110,20 @@ class ConfigSection
      * Set slabel
      *
      * @param string $slabel Label
-     * 
+     *
      * @return ConfigSection
      */
     public function setSlabel($slabel)
     {
         $this->slabel = $slabel;
-    
+
         return $this;
     }
 
     /**
      * Get slabel
      *
-     * @return string 
+     * @return string
      */
     public function getSlabel()
     {
@@ -135,20 +134,20 @@ class ConfigSection
      * Set position
      *
      * @param integer $position Position
-     * 
+     *
      * @return ConfigSection
      */
     public function setPosition($position)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -159,13 +158,13 @@ class ConfigSection
      * Add configGroups
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigGroup $configGroup ConfigGroup
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Entity\ConfigSection
      */
     public function addConfigGroup(\VinceT\AdminConfigurationBundle\Entity\ConfigGroup $configGroup)
     {
         $this->configGroups[] = $configGroup;
-    
+
         return $this;
     }
 
@@ -184,7 +183,7 @@ class ConfigSection
     /**
      * Get configGroups
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getConfigGroups()
     {

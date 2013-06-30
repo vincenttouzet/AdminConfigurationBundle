@@ -42,4 +42,4 @@ class AdminConfigurationCompiler implements CompilerPassInterface
         }
         $pool->addMethodCall('setConfigurations', array($configurations));
     }
-} 
+}

@@ -13,7 +13,6 @@ namespace VinceT\AdminConfigurationBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use VinceT\AdminConfigurationBundle\Form\DataTransformer\StringToArrayTransformer;
 
 /**
@@ -40,7 +39,7 @@ class ConfigValueChoiceType extends AbstractType
     {
         parent::buildForm($builder, $options);
         $form_options = $builder->get('value')->getOptions();
-        if ( $form_options['multiple'] ) {
+        if ($form_options['multiple']) {
             $builder->get('value')->addModelTransformer(new StringToArrayTransformer(','));
         }
     }

@@ -12,8 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Validator\Constraints as Assert;
 use VinceT\AdminConfigurationBundle\Validator\Constraints as AdminConfigurationAssert;
 
 /**
@@ -83,7 +81,7 @@ class ConfigGroup
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -94,20 +92,20 @@ class ConfigGroup
      * Set configSection
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigSection $configSection ConfigSection
-     * 
+     *
      * @return Association
      */
     public function setConfigSection(\VinceT\AdminConfigurationBundle\Entity\ConfigSection $configSection)
     {
         $this->configSection = $configSection;
-    
+
         return $this;
     }
 
     /**
      * Get configSection
      *
-     * @return VinceT\AdminConfigurationBundle\Entity\ConfigSection 
+     * @return VinceT\AdminConfigurationBundle\Entity\ConfigSection
      */
     public function getConfigSection()
     {
@@ -118,20 +116,20 @@ class ConfigGroup
      * Set name
      *
      * @param string $name Name
-     * 
+     *
      * @return ConfigGroup
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -142,20 +140,20 @@ class ConfigGroup
      * Set glabel
      *
      * @param string $glabel Label
-     * 
+     *
      * @return ConfigGroup
      */
     public function setGlabel($glabel)
     {
         $this->glabel = $glabel;
-    
+
         return $this;
     }
 
     /**
      * Get glabel
      *
-     * @return string 
+     * @return string
      */
     public function getGlabel()
     {
@@ -166,20 +164,20 @@ class ConfigGroup
      * Set position
      *
      * @param integer $position Position
-     * 
+     *
      * @return ConfigGroup
      */
     public function setPosition($position)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -190,13 +188,13 @@ class ConfigGroup
      * Add configValues
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigValue $configValue ConfigValue
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Entity\ConfigGroup
      */
     public function addConfigValue(\VinceT\AdminConfigurationBundle\Entity\ConfigValue $configValue)
     {
         $this->configValues[] = $configValue;
-    
+
         return $this;
     }
 
@@ -215,7 +213,7 @@ class ConfigGroup
     /**
      * Get configValues
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getConfigValues()
     {
@@ -234,6 +232,7 @@ class ConfigGroup
             $slabel = $this->getConfigSection()->getSlabel();
         }
         $glabel = $this->getGlabel();
+
         return sprintf(
             '%s > %s',
             $slabel,

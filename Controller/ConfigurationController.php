@@ -13,8 +13,6 @@ namespace VinceT\AdminConfigurationBundle\Controller;
 
 use VinceT\AdminBundle\Controller\AdminController as BaseController;
 use VinceT\AdminConfigurationBundle\Entity\ConfigGroup;
-use Symfony\Component\HttpFoundation\Response;
-use VinceT\AdminConfigurationBundle\Form\ConfigGroupValuesType;
 
 /**
  * Configuration controller
@@ -43,6 +41,7 @@ class ConfigurationController extends BaseController
                 $group = $groups[0];
             }
         }
+
         return $this->renderTemplate($group);
     }
 
@@ -50,16 +49,17 @@ class ConfigurationController extends BaseController
      * [groupAction description]
      *
      * @param string $gname [description]
-     * 
+     *
      * @return [type]
      */
     public function groupAction($gname)
     {
         $group = $this->get('admin.configuration.configgroup_manager')->getRepository()->findOneByName($gname);
-        if ( !$group ) {
+        if (!$group) {
             $message = $this->get('translator')->trans('The group with name "%name%" does not exist.', array('%name%'=>$gname), 'VinceTAdminConfigurationBundle');
             throw $this->createNotFoundException($message);
         }
+
         return $this->renderTemplate($group);
     }
 
@@ -80,14 +80,15 @@ class ConfigurationController extends BaseController
             $configValueManager->update($configValue);
         }
         $message = $this->container->get('translator')->trans(
-            'The configuration has been successfully saved.', 
-            array(), 
+            'The configuration has been successfully saved.',
+            array(),
             'VinceTAdminConfigurationBundle'
         );
         $this->get('session')->getFlashBag()->add('sonata_flash_success', $message);
+
         return $this->redirect(
             $this->generateUrl(
-                'vince_t_admin_configuration_group', 
+                'vince_t_admin_configuration_group',
                 array(
                     'sname' => $group->getConfigSection()->getName(),
                     'gname' => $group->getName()
@@ -106,6 +107,7 @@ class ConfigurationController extends BaseController
     protected function renderTemplate(ConfigGroup $group = null)
     {
         $adminPool = $this->container->get('sonata.admin.pool');
+
         return $this->render(
             'VinceTAdminConfigurationBundle:Configuration:index.html.twig',
             array(
@@ -130,17 +132,18 @@ class ConfigurationController extends BaseController
     protected function createConfigGroupForm(ConfigGroup $group = null)
     {
         $formBuilder = $this->createFormBuilder();
-        if ( $group ) {
+        if ($group) {
             $values = $this->container->get('admin.configuration.configvalue_manager')->getRepository()->findByConfigGroupId($group->getId());
             foreach ($values as $configValue) {
                 $sub = $this->container->get('form.factory')->createNamedBuilder(
                     str_replace(':', '___', $configValue->getPath()),
-                    'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(), 
+                    'admin_configuration_configvalue_'.$configValue->getConfigType()->getFormType(),
                     $configValue
                 );
                 $formBuilder->add($sub);
             }
         }
+
         return $formBuilder->getForm();
     }
 
@@ -161,7 +164,7 @@ class ConfigurationController extends BaseController
         $sections = $configSectionManager->getRepository()->findAllWithConfigGroups();
         $i = 0;
         foreach ($sections as $section) {
-            if ( $i > 0 ) {
+            if ($i > 0) {
                 $menu->addDivider();
             }
             $sLabel = $section->getSLabel();
@@ -170,7 +173,7 @@ class ConfigurationController extends BaseController
             foreach ($groups as $group) {
                 $gLabel = '    '.$group->getGLabel();
                 $menu->addChild(
-                    $gLabel, 
+                    $gLabel,
                     array(
                         'route' => 'vince_t_admin_configuration_group',
                         'routeParameters' => array(
@@ -183,6 +186,7 @@ class ConfigurationController extends BaseController
             }
             $i++;
         }
+
         return $menu;
     }
 }

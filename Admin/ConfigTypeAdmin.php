@@ -75,8 +75,8 @@ class ConfigTypeAdmin extends BaseAdmin
             ->add('tlabel')
             ->add('formType')
             ->add(
-                '_action', 
-                'actions', 
+                '_action',
+                'actions',
                 array(
                     'actions' => array(
                         'view' => array(),

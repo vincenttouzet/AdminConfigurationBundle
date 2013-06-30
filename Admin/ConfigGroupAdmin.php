@@ -78,8 +78,8 @@ class ConfigGroupAdmin extends BaseAdmin
             ->add('glabel')
             ->add('position')
             ->add(
-                '_action', 
-                'actions', 
+                '_action',
+                'actions',
                 array(
                     'actions' => array(
                         'view' => array(),

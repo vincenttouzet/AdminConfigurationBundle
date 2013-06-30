@@ -67,14 +67,16 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
     {
         $sectionManager = $this->container->get('admin.configuration.configsection_manager');
         $section = $sectionManager->getRepository()->findOneByName($name);
-        if ( !$section ) {
+        if (!$section) {
             $section = new ConfigSection();
             $section->setName($name);
             $section->setSLabel($label);
             $section->setPosition($position);
             $sectionManager->create($section);
+
             return true;
         }
+
         return false;
     }
 
@@ -95,18 +97,20 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
         $sectionManager = $this->container->get('admin.configuration.configsection_manager');
         $group = $groupManager->getRepository()->findOneBySectionAndGroupName($sectionName, $name);
         $section = $sectionManager->getRepository()->findOneByName($sectionName);
-        if ( !$section ) {
+        if (!$section) {
             throw new AdminConfigurationBuilderException(sprintf('The section "%s" does not exist.', $sectionName));
         }
-        if ( !$group && $section ) {
+        if (!$group && $section) {
             $group = new ConfigGroup();
             $group->setConfigSection($section);
             $group->setName($name);
             $group->setGLabel($label);
             $group->setPosition($position);
             $groupManager->create($group);
+
             return true;
         }
+
         return false;
     }
 
@@ -125,7 +129,7 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
     {
         $typeManager = $this->container->get('admin.configuration.configtype_manager');
         $type = $typeManager->getRepository()->findOneByIdentifier($identifier);
-        if ( !$type ) {
+        if (!$type) {
             $type = new ConfigType();
             $type->setIdentifier($identifier);
             $type->setTLabel($label);
@@ -134,8 +138,10 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
                 $type->setOptions(json_encode($options));
             }
             $typeManager->create($type);
+
             return true;
-        } 
+        }
+
         return false;
     }
 
@@ -162,13 +168,13 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
         $group = $groupManager->getRepository()->findOneBySectionAndGroupName($sectionName, $groupName);
         $type = $typeManager->getRepository()->findOneByIdentifier($type);
         $value = $valueManager->getRepository()->findOneBySectionGroupAndValueName($sectionName, $groupName, $name);
-        if ( !$group ) {
+        if (!$group) {
             throw new AdminConfigurationBuilderException(sprintf('The group "%s" under the section "%s" does not exist.', $groupName, $sectionName));
         }
-        if ( !$type ) {
+        if (!$type) {
             throw new AdminConfigurationBuilderException(sprintf('The type "%s" does not exist.', $type));
         }
-        if ( !$value && $group && $type ) {
+        if (!$value && $group && $type) {
             $value = new ConfigValue();
             $value->setConfigGroup($group);
             $value->setConfigType($type);
@@ -180,8 +186,10 @@ class AdminConfigurationBuilder implements ContainerAwareInterface
             }
             $value->setPosition($position);
             $valueManager->create($value);
+
             return true;
         }
+
         return false;
     }
 }

@@ -12,7 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * ConfigType
@@ -72,30 +71,30 @@ class ConfigType
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-    
+
     /**
      * Set identifier
      *
-     * @param string $identifier
+     * @param  string     $identifier
      * @return ConfigType
      */
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
-    
+
         return $this;
     }
 
     /**
      * Get identifier
      *
-     * @return string 
+     * @return string
      */
     public function getIdentifier()
     {
@@ -106,20 +105,20 @@ class ConfigType
      * Set tlabel
      *
      * @param string $tlabel Label
-     * 
+     *
      * @return ConfigType
      */
     public function setTlabel($tlabel)
     {
         $this->tlabel = $tlabel;
-    
+
         return $this;
     }
 
     /**
      * Get tlabel
      *
-     * @return string 
+     * @return string
      */
     public function getTlabel()
     {
@@ -130,20 +129,20 @@ class ConfigType
      * Set formType
      *
      * @param string $formType FormType name
-     * 
+     *
      * @return ConfigType
      */
     public function setFormType($formType)
     {
         $this->formType = $formType;
-    
+
         return $this;
     }
 
     /**
      * Get formType
      *
-     * @return string 
+     * @return string
      */
     public function getFormType()
     {
@@ -152,39 +151,39 @@ class ConfigType
 
     /**
      * Gets Options
-     * 
+     *
      * @return [type]
      */
     public function getOptions()
     {
         return $this->options;
     }
-    
+
     /**
      * Sets Options
-     * 
+     *
      * @param [type] $options Options
-     * 
+     *
      * @return [type]
      */
     public function setOptions($options)
     {
         $this->options = $options;
+
         return $this;
     }
-    
 
     /**
      * Add configValues
      *
      * @param VinceT\AdminConfigurationBundle\Entity\ConfigValue $configValue ConfigValue
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Entity\ConfigGroup
      */
     public function addConfigValue(\VinceT\AdminConfigurationBundle\Entity\ConfigValue $configValue)
     {
         $this->configValues[] = $configValue;
-    
+
         return $this;
     }
 
@@ -203,7 +202,7 @@ class ConfigType
     /**
      * Get configValues
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getConfigValues()
     {

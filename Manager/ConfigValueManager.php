@@ -12,7 +12,6 @@
 namespace VinceT\AdminConfigurationBundle\Manager;
 
 use VinceT\BaseBundle\Manager\BaseManager;
-use VinceT\AdminConfigurationBundle\Exception\AdminConfigurationException;
 
 /**
  * ConfigValueManager
@@ -37,9 +36,10 @@ class ConfigValueManager extends BaseManager
     public function get($path)
     {
         $configValue = $this->getRepository()->findOneByPath($path);
-        if ( $configValue ) {
+        if ($configValue) {
             return $configValue->getValue();
         }
+
         return null;
     }
 
@@ -54,7 +54,7 @@ class ConfigValueManager extends BaseManager
     public function set($path, $value)
     {
         $configValue = $this->getRepository()->findOneByPath($path);
-        if ( $configValue ) {
+        if ($configValue) {
             $configValue->setValue($value);
             $this->update($configValue);
         }

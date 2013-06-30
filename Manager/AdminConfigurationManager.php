@@ -99,8 +99,8 @@ class AdminConfigurationManager implements ContainerAwareInterface
     {
         if ( !$this->nameIsValid($name) ) {
             $message = $this->container->get('translator')->trans(
-                'A name must only contains lowercase (a-z) and underscores (_).', 
-                array(), 
+                'A name must only contains lowercase (a-z) and underscores (_).',
+                array(),
                 'VinceTAdminConfigurationBundle'
             );
             throw new AdminConfigurationException($message, 1);

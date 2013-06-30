@@ -22,5 +22,5 @@ namespace VinceT\AdminConfigurationBundle\Configuration;
  */
 class AdminConfigurationBuilderException extends \Exception
 {
-    
+
 }

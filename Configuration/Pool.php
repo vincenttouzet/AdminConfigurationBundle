@@ -62,29 +62,31 @@ class Pool implements ContainerAwareInterface
     public function add($id, $attributes)
     {
         $this->_configurationIds[$id] = $attributes;
+
         return $this;
     }
 
     /**
      * Gets Configurations
-     * 
+     *
      * @return array
      */
     public function getConfigurations()
     {
         return $this->_configurations;
     }
-    
+
     /**
      * Sets Configurations
-     * 
+     *
      * @param array $configurations Configurations
-     * 
+     *
      * @return VinceT\AdminConfigurationBundle\Configuration\Pool
      */
     public function setConfigurations(array $configurations)
     {
         $this->_configurations = $configurations;
+
         return $this;
     }
 

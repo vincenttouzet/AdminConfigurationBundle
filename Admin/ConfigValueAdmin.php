@@ -85,8 +85,8 @@ class ConfigValueAdmin extends BaseAdmin
             ->add('vlabel')
             ->add('position')
             ->add(
-                '_action', 
-                'actions', 
+                '_action',
+                'actions',
                 array(
                     'actions' => array(
                         'view' => array(),

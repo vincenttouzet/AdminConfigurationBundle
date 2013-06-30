@@ -27,7 +27,7 @@ class ConfigSectionValidator extends ContainerAwareValidator
     /**
      * Validate the section
      *
-     * @param string     $section      [description]
+     * @param string     $section    [description]
      * @param Constraint $constraint [description]
      *
      * @return null

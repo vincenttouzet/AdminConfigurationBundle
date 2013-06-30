@@ -34,7 +34,7 @@ class AdminMenuListener
         $menu = $event->getMenu();
 
         $menu['AdminConfiguration']->addChild(
-            'Configuration', 
+            'Configuration',
             array(
                 'route'=>'vince_t_admin_configuration_homepage',
                 'translationDomain' => 'VinceTAdminConfigurationBundle'

@@ -14,8 +14,6 @@ namespace VinceT\AdminConfigurationBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\HttpFoundation\Request;
-
 
 /**
  * InstallDemoCommand
@@ -148,7 +146,7 @@ EOF
             $formOptions,
             $position
         );
-        if ( $created ) {
+        if ($created) {
             $this->output->writeln(sprintf('<info>Create value %s:%s:%s</info>', 'demo', 'demo', $name));
         } else {
             $this->output->writeln(sprintf('<comment>Value %s:%s:%s already exists.</comment>', 'demo', 'demo', $name));

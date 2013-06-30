@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader;
  * This is the class that loads and manages your bundle configuration
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
- * 
+ *
  * @category VinceT
  * @package  VinceTAdminConfigurationBundle
  * @author   Vincent Touzet <vincent.touzet@gmail.com>
