@@ -19,5 +19,10 @@
     "autoload": {
         "psr-0": { "VinceT\\AdminConfigurationBundle": "" }
     },
-    "target-dir": "VinceT/AdminConfigurationBundle"
+    "target-dir": "VinceT/AdminConfigurationBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.2.x-dev"
+        }
+    }
 }
